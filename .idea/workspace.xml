@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="216e96e9-9bd8-442f-be49-dda621de73a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DosJugadores.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/Juego.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/ModoJuego.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/ModoJuegoView$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/ModoJuegoView$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/ModoJuegoView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/UnJugador.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/UnJugadorView$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/UnJugadorView$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Tarea-3-LP/UnJugadorView.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/UnJugadorView.form" afterPath="$PROJECT_DIR$/src/PlayView.form" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/UnJugadorView.java" afterPath="$PROJECT_DIR$/src/PlayView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ModoJuegoView.java" afterPath="$PROJECT_DIR$/src/ModoJuegoView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UnJugador.java" afterPath="$PROJECT_DIR$/src/UnJugador.java" />
-    </list>
+    <list default="true" id="216e96e9-9bd8-442f-be49-dda621de73a6" name="Default" comment="" />
     <ignored path="Tarea-3-LP.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,8 +44,8 @@
       <file leaf-file-name="DosJugadores.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DosJugadores.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="285">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -601,12 +585,12 @@
       <option name="presentableId" value="Default" />
       <updated>1474568752807</updated>
       <workItem from="1474568756044" duration="1009000" />
-      <workItem from="1474995008078" duration="10787000" />
+      <workItem from="1474995008078" duration="10829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11796000" />
+    <option name="totallyTimeSpent" value="11838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
@@ -619,7 +603,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3242424" sideWeight="0.5375" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3242424" sideWeight="0.4625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3242424" sideWeight="0.4625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12734374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -786,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DosJugadores.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="285">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding />
         </state>
       </provider>
