@@ -1,0 +1,2 @@
+public class ModoJuego {
+}
