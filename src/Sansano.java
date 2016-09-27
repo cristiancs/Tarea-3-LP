@@ -16,7 +16,7 @@ public class Sansano {
         return prioridad;
     }
 
-    public void setPrioridad(int valorCambio) {
+    public void updatePrioridad(int valorCambio) {
         prioridad += valorCambio;
         if (prioridad > 3000) {
             prioridad = 3000;
