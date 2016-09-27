@@ -1,7 +1,7 @@
 public class Sansano {
 
-    protected final String name;
-    protected int prioridad;
+    private final String name;
+    private int prioridad;
 
     private Sansano(String nombre) {
         name = nombre;
