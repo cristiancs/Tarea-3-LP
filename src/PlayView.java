@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Cristian Navarrete on 27-09-16.
  */
-public class UnJugadorView extends JFrame{
+public class PlayView extends JFrame{
     private JButton atacarButton;
     private JButton defendermeButton;
     private JLabel prioridadUsuario;
@@ -16,6 +16,9 @@ public class UnJugadorView extends JFrame{
     private JLabel valordefensa;
     private JPanel panel;
     private JLabel NombreJugador;
+    private JLabel NumeroTurno;
+    private JLabel turnoJugadorLabel;
+    private JLabel prioridadEnemigoLabel;
 
 
     public void setCartaActual(String texto){
@@ -39,23 +42,33 @@ public class UnJugadorView extends JFrame{
     public void setNombreJugador(String texto){
         this.NombreJugador.setText(texto);
     }
+    public void setNumeroTurno(String texto){
+        this.NumeroTurno.setText(texto);
+    }
+    public void setturnoJugadorLabel(String texto){
+        this.turnoJugadorLabel.setText(texto);
+    }
+    public void setprioridadEnemigoLabel(String texto){
+        this.prioridadEnemigoLabel.setText(texto);
+    }
 
 
 
-    public UnJugadorView() {
+
+    public PlayView() {
         setContentPane(panel);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         atacarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showConfirmDialog(UnJugadorView.this, "Atacar");
+                JOptionPane.showConfirmDialog(PlayView.this, "Atacar");
             }
         });
         defendermeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showConfirmDialog(UnJugadorView.this, "Defenderme");
+                JOptionPane.showConfirmDialog(PlayView.this, "Defenderme");
             }
         });
         setVisible(true);
