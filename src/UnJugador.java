@@ -4,7 +4,7 @@ import javax.swing.*;
  * Created by Cristian Navarrete on 27-09-16.
  */
 public class UnJugador implements ModoJuego{
-    UnJugador(ModoJuegoView oldScreen){
+    public void init (ModoJuegoView oldScreen){
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         String nombre = null;

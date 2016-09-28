@@ -21,13 +21,16 @@ public class ModoJuegoView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                UnJugador juego = new UnJugador(ModoJuegoView.this);
+
+                ModoJuego juego = new UnJugador();
+                juego.init(ModoJuegoView.this);
             }
         });
         a2JugadoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DosJugadores juego = new DosJugadores(ModoJuegoView.this);
+                ModoJuego juego = new DosJugadores();
+                juego.init(ModoJuegoView.this);
             }
         });
         setVisible(true);

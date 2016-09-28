@@ -5,7 +5,7 @@ import javax.swing.*;
  */
 public class DosJugadores implements  ModoJuego{
 
-    DosJugadores(ModoJuegoView oldScreen){
+    public void init(ModoJuegoView oldScreen){
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         String nombreJugador1 = null;
