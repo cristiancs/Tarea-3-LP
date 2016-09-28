@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import javax.swing.*;
 
 /**
@@ -16,7 +15,4 @@ public class UnJugador implements ModoJuego{
         view.setNombreJugador(nombre);
 
     }
-=======
-public class UnJugador {
->>>>>>> master
 }
