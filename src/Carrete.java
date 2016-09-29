@@ -1,2 +1,5 @@
-public class Carrete {
+public class Carrete extends Carta {
+    private Carrete () {
+    }
+
 }

@@ -1,2 +1,5 @@
-public class Profesor {
+public class Profesor extends Carta {
+    private Profesor () {
+    }
+
 }
