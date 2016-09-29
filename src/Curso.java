@@ -1,18 +1,22 @@
-
 public class Curso extends Carta {
 
-    int puntosDefensa;
+    protected int ataque, defensa;
 
-    public Curso (String name, String descript, int puntos) {
+
+    public Curso (String name, String descript, int atq, int def) {
         nombre = name;
         descripcion = descript;
-        puntosHabilidad = puntos;
-        puntosDefensa = puntos - 3;
+        ataque = atq;
+        defensa = def;
     }
 
-    public void aprobar () {
-        System.out.print("Hola");
+    public void Aprobar (Sansano jugador) {
+        puntosHabilidad = defensa;
+        activar(jugador);
     }
 
-    public void reprobar () {}
+    public void Reprobar (Sansano jugador) {
+        puntosHabilidad = -ataque;
+        activar(jugador);
+    }
 }

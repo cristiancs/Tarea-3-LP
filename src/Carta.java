@@ -11,9 +11,7 @@ public abstract class Carta {
 
     protected void activar (Sansano jugador, int puntos, String modo) {
         if (Objects.equals(modo, "ataque")){
-            puntos = -puntos;
+            jugador.updatePrioridad(-puntos);
         }
-        jugador.updatePrioridad(puntosHabilidad);
     }
-
 }

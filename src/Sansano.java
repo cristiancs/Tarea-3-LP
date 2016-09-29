@@ -3,7 +3,12 @@ public class Sansano {
     private final String name;
     private int prioridad;
 
-    private Sansano(String nombre) {
+    public Sansano() {
+        name = "Oponente";
+        prioridad = 3000;
+    }
+
+    public Sansano(String nombre) {
         name = nombre;
         prioridad = 3000;
     }
