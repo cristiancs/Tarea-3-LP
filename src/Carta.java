@@ -14,4 +14,12 @@ public abstract class Carta {
             jugador.updatePrioridad(-puntos);
         }
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 }

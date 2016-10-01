@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sansano {
 
     private final String name;
-    private int prioridad;
+    private static int prioridad = 3000;
+    private List mazo = new ArrayList();
 
     public Sansano() {
         name = "Oponente";
-        prioridad = 3000;
     }
 
     public Sansano(String nombre) {
         name = nombre;
-        prioridad = 3000;
     }
 
     public String getName() {
@@ -29,5 +31,15 @@ public class Sansano {
         else if (prioridad < 0){
             prioridad = 0;
         }
+    }
+
+    public void addCard(Carta card){
+        mazo.add(card);
+    }
+
+    public Object getCard(int indice){
+        Object card = mazo.get(indice);
+        mazo.remove(indice);
+        return card;
     }
 }
