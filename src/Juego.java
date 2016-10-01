@@ -31,7 +31,11 @@ public class Juego {
         Sansano player = new Sansano("asd");
         Sansano pc = new Sansano();
         player.addCard(cerr);
-        Object actual = player.getCard(0);
+        player.addCard(ma);
+        player.addCard(mate);
+        player.addCard(mate);
+        player.addCard(mate);
+        Object pasajera = player.getCard();
 
 
         ModoJuegoView portada =  new ModoJuegoView();

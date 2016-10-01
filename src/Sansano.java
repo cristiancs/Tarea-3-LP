@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Sansano {
 
@@ -37,9 +38,10 @@ public class Sansano {
         mazo.add(card);
     }
 
-    public Object getCard(int indice){
-        Object card = mazo.get(indice);
-        mazo.remove(indice);
+    public Object getCard() {
+        int rand = ThreadLocalRandom.current().nextInt(0, mazo.size() + 1);
+        Object card = mazo.get(rand);
+        mazo.remove(rand);
         return card;
     }
 }
