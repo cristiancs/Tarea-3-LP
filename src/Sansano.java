@@ -37,6 +37,10 @@ public class Sansano {
         mazo.add(card);
     }
 
+    public void addCard(Carta card, int pos){
+        mazo.set(pos, card);
+    }
+
     public Object getCard() {
         Object card = mazo.get(0);
         return card;
