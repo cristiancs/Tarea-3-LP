@@ -1,5 +1,13 @@
 public class Curso extends Carta {
 
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public int getDefensa() {
+        return defensa;
+    }
+
     protected int ataque, defensa;
 
 
