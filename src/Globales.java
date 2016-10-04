@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Globales {
-    
+
     public enum Cards {
         // Crear cartas de Curso
         MATE("Matemáticas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),
