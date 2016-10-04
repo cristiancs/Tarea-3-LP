@@ -11,6 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class UnJugador implements ModoJuego{
     private Sansano pc = new Sansano();
+    private Sansano jugador;
     public void init (ModoJuegoView oldScreen) {
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
@@ -33,7 +34,7 @@ public class UnJugador implements ModoJuego{
                     , null                             // Opcion por defecto
                     );
         }
-        view.setNombreJugador(nombre);
+        jugador = new Sansano(nombre);
         if(opcion == 0){
             Agresivo();
         }
