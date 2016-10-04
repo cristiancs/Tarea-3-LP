@@ -29,7 +29,7 @@ public class ModoJuegoView extends JFrame{
         a2JugadoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ModoJuego juego = new DosJugadores();
+                ModoJuego juego = new ConUnAmigo();
                 juego.init(ModoJuegoView.this);
             }
         });
