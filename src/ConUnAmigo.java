@@ -22,6 +22,6 @@ public class ConUnAmigo implements ModoJuego{
 
     public void asignarCartas(Sansano jugador, Sansano jugador2) {
 
-
+        
     }
 }
