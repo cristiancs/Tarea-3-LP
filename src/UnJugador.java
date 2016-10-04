@@ -10,11 +10,11 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by Cristian Navarrete on 27-09-16.
  */
 public class UnJugador implements ModoJuego{
-    private Sansano pc = new Sansano();
-    private Sansano jugador;
+    private Sansano pc,jugador;
     public void init (ModoJuegoView oldScreen) {
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
+        pc = new Sansano();
         String nombre = null;
         while ((nombre == null) || nombre.isEmpty()) {
             nombre = JOptionPane.showInputDialog(view, "Introduzca su nombre:");
@@ -35,6 +35,7 @@ public class UnJugador implements ModoJuego{
                     );
         }
         jugador = new Sansano(nombre);
+        view.setNombreJugador(nombre);
         if(opcion == 0){
             Agresivo();
         }
