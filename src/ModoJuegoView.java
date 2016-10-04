@@ -23,14 +23,14 @@ public class ModoJuegoView extends JFrame{
             {
 
                 ModoJuego juego = new UnJugador();
-                juego.init(ModoJuegoView.this);
+                juego.iniciar(ModoJuegoView.this);
             }
         });
         a2JugadoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ModoJuego juego = new ConUnAmigo();
-                juego.init(ModoJuegoView.this);
+                juego.iniciar(ModoJuegoView.this);
             }
         });
         setVisible(true);
