@@ -85,7 +85,7 @@ public class Globales {
     }
 
     public int randomMazo (List<Integer> posiciones){
-        int random = ThreadLocalRandom.current().nextInt(0, 31);
+        int random = ThreadLocalRandom.current().nextInt(0, 30);
         while (posiciones.lastIndexOf(random) == .1){
             random = (random + 7) % 30;
         }
