@@ -41,10 +41,10 @@ public class UnJugador implements ModoJuego{
         view.setprioridadUsuario("3000");
         view.setNumeroTurno("1");
         view.setultima_accion("");
-        asignarCartas(jugador, pc);
+        asignarCartas(jugador, pc, opcion);
 
         // Loop de Juego
-        
+
 
     }
 
@@ -186,7 +186,7 @@ public class UnJugador implements ModoJuego{
             }
 
         }
-        if
+
 
     }
     private void Defensivo(Sansano pc){
@@ -217,6 +217,8 @@ public class UnJugador implements ModoJuego{
         });
 
         giveCartasEspecialesRandom(listaCartas);
-
+        for(int x=0;x<listaCartas.size();x++) {
+            pc.addCard((Carta)listaCartas.get(x));
+        }
     }
 }

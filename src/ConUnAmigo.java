@@ -20,7 +20,7 @@ public class ConUnAmigo implements ModoJuego{
 
     }
 
-    public void asignarCartas(Sansano jugador, Sansano jugador2) {
+    public void asignarCartas(Sansano jugador, Sansano jugador2, int opcion) {
         /*/ Insertar Cursos
         for (int i = 0; i < 1; i++) {
             jugador.addCard(Globales.mate);
