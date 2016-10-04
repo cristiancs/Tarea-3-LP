@@ -36,16 +36,19 @@ public class UnJugador implements ModoJuego{
         }
         jugador = new Sansano(nombre);
         view.setNombreJugador(nombre);
-        if(opcion == 0){
-            Agresivo();
-        }
-        else if(opcion == 1){
-            Defensivo();
-        }
+
+        view.setprioridadEnemigo("3000");
+        view.setprioridadUsuario("3000");
+        view.setNumeroTurno("1");
+        view.setultima_accion("");
+        asignarCartas(jugador, pc);
+
+        // Loop de Juego
+        
 
     }
 
-    public void asignarCartas(Sansano jugador, Sansano pc) {
+    public void asignarCartas(Sansano jugador, Sansano pc,int opcion) {
         int rand, i;
         Carta carta;
         Globales global = new Globales();
@@ -112,6 +115,12 @@ public class UnJugador implements ModoJuego{
 
             }
         }
+        if(opcion == 0){
+            Agresivo(pc);
+        }
+        else if(opcion == 1){
+            Defensivo(pc);
+        }
     }
 
     private void giveCartasNormales(List listaCartas){
@@ -177,9 +186,10 @@ public class UnJugador implements ModoJuego{
             }
 
         }
+        if
 
     }
-    private void Defensivo(){
+    private void Defensivo(Sansano pc){
         // Insertar cartas jugador
         List listaCartas = new ArrayList(30);
         giveCartasNormales(listaCartas);
@@ -195,7 +205,7 @@ public class UnJugador implements ModoJuego{
             pc.addCard((Carta)listaCartas.get(x));
         }
     }
-    private void Agresivo(){
+    private void Agresivo(Sansano pc){
         // Insertar cartas jugador
         List listaCartas = new ArrayList(30);
         giveCartasNormales(listaCartas);
