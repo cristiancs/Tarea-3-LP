@@ -25,7 +25,7 @@ public class DosJugadores implements  ModoJuego{
     }
 
     public void asignarCartas(Sansano jugador, Sansano jugador2) {
-        // Insertar Cursos
+        /*/ Insertar Cursos
         for (int i = 0; i < 1; i++) {
             jugador.addCard(Globales.mate);
             jugador2.addCard(Globales.mate);
@@ -81,6 +81,6 @@ public class DosJugadores implements  ModoJuego{
         jugador2.addCard(Globales.libre);
 
         jugador.addCard(Globales.ombligo);
-        jugador2.addCard(Globales.ombligo);
+        jugador2.addCard(Globales.ombligo);*/
     }
 }
