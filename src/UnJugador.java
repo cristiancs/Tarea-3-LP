@@ -49,72 +49,8 @@ public class UnJugador implements ModoJuego{
     }
 
     public void asignarCartas(Sansano jugador, Sansano pc,int opcion) {
-        int rand, i;
-        Carta carta;
         Globales global = new Globales();
-        List<Integer> posiciones = new ArrayList<>();
-        for (Globales.Cards cartas : Globales.Cards.values()) {
-            switch (cartas) {
-                case MATE:
-                    rand = global.randomMazo(posiciones);
-                    carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
-                    jugador.addCard(carta, rand);
-                    break;
-                case FIS:
-                    for (i = 0; i < 4; i++) {
-                        rand = global.randomMazo(posiciones);
-                        carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
-                        jugador.addCard(carta, rand);
-                    }
-                    break;
-                case LP:
-                    for (i = 0; i < 2; i++) {
-                        rand = global.randomMazo(posiciones);
-                        carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
-                        jugador.addCard(carta, rand);
-                    }
-                    break;
-                case PROGRA:
-                    for (i = 0; i < 6; i++) {
-                        rand = global.randomMazo(posiciones);
-                        carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
-                        jugador.addCard(carta, rand);
-                    }
-                    break;
-                case ED:
-                    for (i = 0; i < 3; i++) {
-                        rand = global.randomMazo(posiciones);
-                        carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
-                        jugador.addCard(carta, rand);
-                    }
-                    break;
-                case EDD:
-                    for (i = 0; i < 4; i++) {
-                        rand = global.randomMazo(posiciones);
-                        carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
-                        jugador.addCard(carta, rand);
-                    }
-                    break;
-                case BAH:
-                case MA:
-                case CIF:
-                case MR:
-                    rand = global.randomMazo(posiciones);
-                    carta = new Profesor(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
-                    jugador.addCard(carta, rand);
-                    break;
-                case CERR:
-                case INTER:
-                case FONDA:
-                case WEEK:
-                case FREE:
-                case OMBLIGO:
-                    rand = global.randomMazo(posiciones);
-                    carta = new Carrete(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
-                    jugador.addCard(carta, rand);
-
-            }
-        }
+        global.asignarRandom(jugador);
         if(opcion == 0){
             Agresivo(pc);
         }
