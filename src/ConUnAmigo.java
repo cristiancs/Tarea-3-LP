@@ -1,6 +1,7 @@
 import javax.swing.*;
 
 public class ConUnAmigo implements ModoJuego {
+
     public void iniciar(ModoJuegoView oldScreen) {
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
@@ -17,11 +18,10 @@ public class ConUnAmigo implements ModoJuego {
         view.setturnoJugadorLabel("Turno del jugador:");
         view.setNombreJugador(nombreJugador1);
     }
-}
 
-    public void asignarCartas(Sansano jugador, Sansano jugador2) {
+    public void asignarCartas(Sansano jugador, Sansano contrincante, int opcion) {
         Globales global = new Globales();
         global.asignarRandom(jugador);
-        global.asignarRandom(jugador2);
+        global.asignarRandom(contrincante);
     }
 }
