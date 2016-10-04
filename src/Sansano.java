@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Sansano {
 
     private final String name;
     private static int prioridad = 3000;
-    private List mazo = new ArrayList();
+    private List mazo = new ArrayList(30);
 
     public Sansano() {
         name = "Oponente";
@@ -39,9 +38,7 @@ public class Sansano {
     }
 
     public Object getCard() {
-        int rand = ThreadLocalRandom.current().nextInt(0, mazo.size() + 1);
-        Object card = mazo.get(rand);
-        mazo.remove(rand);
+        Object card = mazo.get(0);
         return card;
     }
 }

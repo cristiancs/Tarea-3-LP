@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Cristian Navarrete on 27-09-16.
@@ -18,13 +19,20 @@ public class UnJugador implements ModoJuego{
 
     public void asignarCartas(Sansano jugador, Sansano pc) {
 
+        /int rand = ThreadLocalRandom.current().nextInt(0, mazo.size() + 1);
+        Object card = mazo.get(rand);
+        mazo.remove(rand);*/
+
         // Insertar cartas jugador
-        /*for (Object cartas : Globales.Cards.values()){
-            Carta toAdd = new Carta(cartas.getName(), cartas.getDescripcion(), cartas.getPuntos());
-            switch (Cards){
+        for (Globales.Cards cartas : Globales.Cards.values()){
+            switch (cartas){
+                case MATE:
+
+                    break;
+                case FIS:
             }
 
-        }*/
+        }
 
     }
 }

@@ -45,10 +45,10 @@ public class Globales {
         FREE("BloqueLibre", "Recupera 30 puntos de prioridad.", 30),
         OMBLIGO("FiestaOmbligo", "Recupera 125 puntos de prioridad.", 125);
 
-        String nombre;
-        String descripcion;
-        int puntos;
-        int def;
+        private String nombre;
+        private String descripcion;
+        private int puntos;
+        private int def;
 
         // Constructor
         Cards(String cardName, String cardDes, int ataque, int defensa) {
