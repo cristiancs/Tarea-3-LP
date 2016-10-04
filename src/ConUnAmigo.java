@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class ConUnAmigo implements ModoJuego{
-    public void init(ModoJuegoView oldScreen){
+    public void iniciar(ModoJuegoView oldScreen){
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         String nombreJugador1 = null;

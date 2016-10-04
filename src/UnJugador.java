@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class UnJugador implements ModoJuego{
     private Sansano pc,jugador;
-    public void init (ModoJuegoView oldScreen) {
+    public void iniciar(ModoJuegoView oldScreen) {
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         pc = new Sansano();
