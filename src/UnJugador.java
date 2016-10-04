@@ -101,7 +101,7 @@ public class UnJugador implements ModoJuego{
                 case FREE:
                 case OMBLIGO:
                     rand = global.randomMazo(posiciones);
-                    carta = new Profesor(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
+                    carta = new Carrete(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
                     jugador.addCard(carta, rand);
 
             }
