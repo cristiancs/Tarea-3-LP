@@ -14,8 +14,6 @@ public class Juego {
         player.addCard(mate);
         Object pasajera = player.getCard();
         */
-        UnJugador juego = new UnJugador();
-        juego.asignarCartas(player, pc);
 
         ModoJuegoView portada =  new ModoJuegoView();
 
