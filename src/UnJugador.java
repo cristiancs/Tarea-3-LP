@@ -41,7 +41,6 @@ public class UnJugador implements ModoJuego{
 
     public void asignarCartas(Sansano jugador, Sansano pc) {
         int rand, i;
-        Globales global = new Globales();
         Carta carta;
         Globales global = new Globales();
         List<Integer> posiciones = new ArrayList<>();
