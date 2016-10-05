@@ -1,16 +1,25 @@
 public class Profesor extends Carta {
 
-    protected int daño;
+    public int getDanio() {
+        return danio;
+    }
+    public int puntosHabilidad(String modo){
+        return danio;
+    }
 
+    protected int danio;
     public Profesor (String name, String descript, int damage) {
         nombre = name;
         descripcion = descript;
-        daño = damage;
+        danio = damage;
+        tipo = "profesor";
     }
 
-    public void activar(Sansano jugador) {
-        puntosHabilidad = -daño;
-        super.activar(jugador);
+
+    public int activar(Sansano jugador, String modo) {
+        puntosHabilidad = -danio;
+        jugador.updatePrioridad(puntosHabilidad);
+        return jugador.getPrioridad();
     }
 
 }

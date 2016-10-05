@@ -7,6 +7,15 @@ public class Curso extends Carta {
     public int getDefensa() {
         return defensa;
     }
+    public int puntosHabilidad(String modo){
+        if(modo.equals("ataque")){
+            return ataque;
+        }
+        if(modo.equals("defensa")){
+            return defensa;
+        }
+        return -1;
+    }
 
     protected int ataque, defensa;
 
@@ -16,15 +25,25 @@ public class Curso extends Carta {
         descripcion = descript;
         ataque = atq;
         defensa = def;
+        tipo = "curso";
     }
 
     public void Aprobar (Sansano jugador) {
         puntosHabilidad = defensa;
-        activar(jugador);
+        jugador.updatePrioridad(puntosHabilidad);
     }
 
     public void Reprobar (Sansano jugador) {
         puntosHabilidad = -ataque;
-        activar(jugador);
+        jugador.updatePrioridad(puntosHabilidad);
+    }
+    public int activar(Sansano jugador, String modo){
+        if(modo.equals("ataque")){
+            Reprobar(jugador);
+        }
+        else{
+            Aprobar(jugador);
+        }
+        return jugador.getPrioridad();
     }
 }

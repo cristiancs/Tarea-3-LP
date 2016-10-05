@@ -15,7 +15,7 @@ public class ConUnAmigo implements ModoJuego {
             nombreJugador2 = JOptionPane.showInputDialog(view, "Introduzca nombre Jugador 2:");
 
         }
-        view.setturnoJugadorLabel("Turno del jugador:");
+        view.setTurnoJugadorLabel("Turno del jugador:");
         view.setNombreJugador(nombreJugador1);
     }
 

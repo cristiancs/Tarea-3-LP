@@ -46,6 +46,7 @@ public class Sansano {
 
     public Object getCard() {
         Object card = mazo.get(0);
+        mazo.remove(0);
         return card;
     }
 }

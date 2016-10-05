@@ -7,6 +7,15 @@ import java.awt.event.ActionListener;
  */
 public class PlayView extends JFrame{
     private JButton atacarButton;
+
+    public JButton getAtacarButton() {
+        return atacarButton;
+    }
+
+    public JButton getDefendermeButton() {
+        return defendermeButton;
+    }
+
     private JButton defendermeButton;
     private JLabel prioridadUsuario;
     private JLabel CartaActual;
@@ -30,13 +39,13 @@ public class PlayView extends JFrame{
     public void setprioridadEnemigo(String texto){
         this.prioridadEnemigo.setText(texto);
     }
-    public void setultima_accion(String texto){
+    public void setUltimaAccion(String texto){
         this.ultima_accion.setText(texto);
     }
-    public void setvalorataque(String texto){
+    public void setValorAtaque(String texto){
         this.valorataque.setText(texto);
     }
-    public void setvalordefensa(String texto){
+    public void setValorDefensa(String texto){
         this.valordefensa.setText(texto);
     }
     public void setNombreJugador(String texto){
@@ -45,10 +54,10 @@ public class PlayView extends JFrame{
     public void setNumeroTurno(String texto){
         this.NumeroTurno.setText(texto);
     }
-    public void setturnoJugadorLabel(String texto){
+    public void setTurnoJugadorLabel(String texto){
         this.turnoJugadorLabel.setText(texto);
     }
-    public void setprioridadEnemigoLabel(String texto){
+    public void setPrioridadEnemigoLabel(String texto){
         this.prioridadEnemigoLabel.setText(texto);
     }
 
@@ -59,18 +68,6 @@ public class PlayView extends JFrame{
         setContentPane(panel);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        atacarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showConfirmDialog(PlayView.this, "Atacar");
-            }
-        });
-        defendermeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showConfirmDialog(PlayView.this, "Defenderme");
-            }
-        });
         setVisible(true);
 
     }

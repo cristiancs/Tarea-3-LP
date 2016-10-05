@@ -4,16 +4,10 @@ public abstract class Carta {
     protected String nombre;
     protected String descripcion;
     protected int puntosHabilidad;
+    protected String tipo;
 
-    protected void activar(Sansano jugador) {
-        jugador.updatePrioridad(puntosHabilidad);
-    }
-
-    protected void activar (Sansano jugador, int puntos, String modo) {
-        if (Objects.equals(modo, "ataque")){
-            jugador.updatePrioridad(-puntos);
-        }
-    }
+    public abstract int activar(Sansano jugador, String modo);
+    public abstract int puntosHabilidad(String modo);
 
     public String getNombre() {
         return nombre;
