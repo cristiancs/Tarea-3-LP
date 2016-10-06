@@ -63,59 +63,47 @@ public class Globales {
         }
     }
 
-    public int randomMazo (List<Integer> posiciones){
-        int random = ThreadLocalRandom.current().nextInt(0, 30);
-        int test = posiciones.lastIndexOf(random);
-        while (posiciones.lastIndexOf(random) != -1){
-            random = (random + 7) % 30;
-        }
-        posiciones.add(random);
-        return random;
-
-    }
-
     public void asignarRandom (Sansano jugador){
-        int rand, i;
+        int i, rand;
         Carta carta;
-        List<Integer> posiciones = new ArrayList<>();
         for (Cards cartas : Cards.values()) {
             switch (cartas) {
                 case MATE:
-                    rand = randomMazo(posiciones);
+                    rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                     carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
                     jugador.addCard(carta, rand);
                     break;
                 case FIS:
                     for (i = 0; i < 4; i++) {
-                        rand = randomMazo(posiciones);
+                        rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                         carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
                         jugador.addCard(carta, rand);
                     }
                     break;
                 case LP:
                     for (i = 0; i < 2; i++) {
-                        rand = randomMazo(posiciones);
+                        rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                         carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
                         jugador.addCard(carta, rand);
                     }
                     break;
                 case PROGRA:
                     for (i = 0; i < 6; i++) {
-                        rand = randomMazo(posiciones);
+                        rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                         carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
                         jugador.addCard(carta, rand);
                     }
                     break;
                 case ED:
                     for (i = 0; i < 3; i++) {
-                        rand = randomMazo(posiciones);
+                        rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                         carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
                         jugador.addCard(carta, rand);
                     }
                     break;
                 case EDD:
                     for (i = 0; i < 4; i++) {
-                        rand = randomMazo(posiciones);
+                        rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize());
                         carta = new Curso(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos(), cartas.getDef());
                         jugador.addCard(carta, rand);
                     }
@@ -124,7 +112,7 @@ public class Globales {
                 case MA:
                 case CIF:
                 case MR:
-                    rand = randomMazo(posiciones);
+                    rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                     carta = new Profesor(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
                     jugador.addCard(carta, rand);
                     break;
@@ -134,10 +122,9 @@ public class Globales {
                 case WEEK:
                 case FREE:
                 case OMBLIGO:
-                    rand = randomMazo(posiciones);
+                    rand = ThreadLocalRandom.current().nextInt(0, jugador.getMazoSize()+1);
                     carta = new Carrete(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
                     jugador.addCard(carta, rand);
-
             }
         }
     }

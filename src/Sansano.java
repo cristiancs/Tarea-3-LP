@@ -6,20 +6,22 @@ public class Sansano {
 
     private final String name;
     private static int prioridad = 3000;
-    private ArrayList mazo;
+    private ArrayList mazo = new ArrayList<Carta>(30);
 
     public Sansano() {
-        mazo = new ArrayList<Carta>(30);
         name = "Oponente";
     }
 
     public Sansano(String nombre) {
-        mazo = new ArrayList<Carta>(Collections.nCopies(30, null));
         name = nombre;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getMazoSize() {
+        return mazo.size();
     }
 
     public int getPrioridad() {
@@ -41,7 +43,7 @@ public class Sansano {
     }
 
     public void addCard(Carta card, int pos){
-        mazo.set(pos, card);
+        mazo.add(pos, card);
     }
 
     public Object getCard() {
