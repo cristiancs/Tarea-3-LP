@@ -1,11 +1,5 @@
 public class Carrete extends Carta {
 
-    public int getCuracion() {
-        return curacion;
-    }
-    public int puntosHabilidad(String modo){
-        return curacion;
-    }
     protected int curacion;
 
     public Carrete (String name, String descript, int heal) {
@@ -15,7 +9,7 @@ public class Carrete extends Carta {
         curacion = puntosHabilidad = heal;
     }
 
-    public int activar(Sansano jugador, String modo) {
+    public int activar(Sansano jugador) {
         jugador.updatePrioridad(curacion);
         return jugador.getPrioridad();
     }

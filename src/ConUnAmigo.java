@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class ConUnAmigo implements ModoJuego {
+public class ConUnAmigo extends Globales implements ModoJuego {
 
     public void iniciar(ModoJuegoView oldScreen) {
         oldScreen.setVisible(false);
@@ -20,8 +20,7 @@ public class ConUnAmigo implements ModoJuego {
     }
 
     public void asignarCartas(Sansano jugador, Sansano contrincante, int opcion) {
-        Globales global = new Globales();
-        global.asignarRandom(jugador);
-        global.asignarRandom(contrincante);
+        asignarRandom(jugador);
+        asignarRandom(contrincante);
     }
 }
