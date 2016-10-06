@@ -211,8 +211,8 @@ public class UnJugador implements ModoJuego{
         }
     }
     private void giveCartasEspecialesRandom(List listaCartas){
-        int rand, i, i2;
-        i2 = 20;
+        int rand, i;
+        i = 20;
         for (Globales.Cards cartas : Globales.Cards.values()) {
             switch (cartas) {
                 case BAH:
@@ -220,9 +220,8 @@ public class UnJugador implements ModoJuego{
                 case CIF:
                 case MR:
 
-                    rand = ThreadLocalRandom.current().nextInt(0, i2);
+                    rand = ThreadLocalRandom.current().nextInt(0, i++);
                     listaCartas.add(rand, new Profesor(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos()));
-                    i2++;
                     break;
                 case CERR:
                 case INTER:
@@ -231,9 +230,8 @@ public class UnJugador implements ModoJuego{
                 case FREE:
                 case OMBLIGO:
 
-                    rand = ThreadLocalRandom.current().nextInt(0, i2);
+                    rand = ThreadLocalRandom.current().nextInt(0, i++);
                     listaCartas.add(rand, new Carrete(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos()));
-                    i2++;
             }
 
         }
