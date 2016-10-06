@@ -19,6 +19,7 @@ public class UnJugador implements ModoJuego{
     private Object carta;
     private JButton atacarButton;
     private JButton defendermeButton;
+
     public void iniciar(ModoJuegoView oldScreen) {
         oldScreen.setVisible(false);
         view = new PlayView();
@@ -61,7 +62,7 @@ public class UnJugador implements ModoJuego{
 
                 cache = ((Carta) carta).activar(jugador, "ataque");
                 view.setprioridadEnemigo(String.valueOf(cache));
-                juegoBot(carta);
+                juegoBot();
                 DesarrolloJuego(juego);
             }
         });
@@ -77,7 +78,7 @@ public class UnJugador implements ModoJuego{
                     cache = ((Carrete) carta).activar(jugador, "defensa");
                 }
                 view.setprioridadUsuario(String.valueOf(cache));
-                juegoBot(carta);
+                juegoBot();
                 DesarrolloJuego(juego);
             }
         });
@@ -136,7 +137,8 @@ public class UnJugador implements ModoJuego{
             }
         }
     }
-    private void juegoBot(Object carta){
+    private void juegoBot(){
+        Object carta = this.pc.getCard();
         if (carta instanceof Curso) {
             int rand = ThreadLocalRandom.current().nextInt(0, 2);
             if(rand == 1){
