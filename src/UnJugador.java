@@ -214,7 +214,6 @@ public class UnJugador implements ModoJuego{
     private void giveCartasEspecialesRandom(List listaCartas){
         int rand, i, i2;
         i2 = 20;
-        Globales global = new Globales();
         for (Globales.Cards cartas : Globales.Cards.values()) {
             switch (cartas) {
                 case BAH:
@@ -244,7 +243,7 @@ public class UnJugador implements ModoJuego{
     }
     private void Defensivo(Sansano pc){
         // Insertar cartas jugador
-        List listaCartas = new ArrayList(30);
+        List listaCartas = new ArrayList<Carta>(30);
         giveCartasNormales(listaCartas);
         Collections.sort(listaCartas, new Comparator<Curso>() {
             @Override
@@ -254,8 +253,8 @@ public class UnJugador implements ModoJuego{
         });
 
         giveCartasEspecialesRandom(listaCartas);
-        for(int x=0;x<listaCartas.size();x++) {
-            pc.addCard((Carta)listaCartas.get(x));
+        for (Object listaCarta : listaCartas) {
+            pc.addCard((Carta) listaCarta);
         }
     }
     private void Agresivo(Sansano pc){
@@ -270,8 +269,8 @@ public class UnJugador implements ModoJuego{
         });
 
         giveCartasEspecialesRandom(listaCartas);
-        for(int x=0;x<listaCartas.size();x++) {
-            pc.addCard((Carta)listaCartas.get(x));
+        for (Object listaCarta : listaCartas) {
+            pc.addCard((Carta) listaCarta);
         }
     }
 }
