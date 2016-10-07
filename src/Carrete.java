@@ -10,7 +10,11 @@ public class Carrete extends Carta {
     }
 
     public int activar(Sansano jugador) {
-        jugador.updatePrioridad(curacion);
+        Carretear(jugador);
         return jugador.getPrioridad();
+    }
+
+    private void Carretear(Sansano jugador) {
+        jugador.updatePrioridad(curacion);
     }
 }

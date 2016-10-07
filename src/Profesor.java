@@ -10,7 +10,11 @@ public class Profesor extends Carta {
     }
 
     public int activar(Sansano jugador) {
-        jugador.updatePrioridad(-danio);
+        Recorregir(jugador);
         return jugador.getPrioridad();
+    }
+
+    private void Recorregir (Sansano jugador){
+        jugador.updatePrioridad(-danio);
     }
 }
