@@ -9,9 +9,8 @@ public class Profesor extends Carta {
         tipo = "profesor";
     }
 
-    public int activar(Sansano jugador) {
+    public void activar(Sansano jugador) {
         Recorregir(jugador);
-        return jugador.getPrioridad();
     }
 
     private void Recorregir (Sansano jugador){

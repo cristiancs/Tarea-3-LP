@@ -9,9 +9,8 @@ public class Carrete extends Carta {
         curacion = puntosHabilidad = heal;
     }
 
-    public int activar(Sansano jugador) {
+    public void activar(Sansano jugador) {
         Carretear(jugador);
-        return jugador.getPrioridad();
     }
 
     private void Carretear(Sansano jugador) {

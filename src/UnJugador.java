@@ -14,15 +14,16 @@ public class UnJugador implements ModoJuego{
     private Sansano pc,jugador;
     private PlayView view;
     private Duelo juego;
-    private int cache;
     private Object carta;
     private JButton atacarButton;
     private JButton defendermeButton;
 
-    public void iniciar(ModoJuegoView oldScreen) {
+    public void iniciar(ModoJuegoView oldScreen, Sansano p1, Sansano p2) {
+
         oldScreen.setVisible(false);
         view = new PlayView();
-        pc = new Sansano();
+        pc = p2;
+        jugador = p1;
         String nombre = null;
         while ((nombre == null) || nombre.isEmpty()) {
             nombre = JOptionPane.showInputDialog(view, "Introduzca su nombre:");
@@ -42,7 +43,7 @@ public class UnJugador implements ModoJuego{
                     , null                             // Opcion por defecto
             );
         }
-        jugador = new Sansano(nombre);
+        jugador.setName(nombre);
         view.setNombreJugador(nombre);
 
         view.setprioridadEnemigo("3000");
@@ -58,9 +59,8 @@ public class UnJugador implements ModoJuego{
         view.getAtacarButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                cache = ((Curso) carta).activar(jugador, "ataque");
-                view.setprioridadEnemigo(String.valueOf(cache));
+                Globales.setModoUso("ataque");
+                ((Curso) carta).activar(pc);
                 juegoBot();
                 DesarrolloJuego(juego);
             }
@@ -68,15 +68,14 @@ public class UnJugador implements ModoJuego{
         defendermeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Globales.setModoUso("defensa");
                 if(carta instanceof Curso){
-                    cache = ((Curso) carta).activar(jugador, "defensa");
+                    ((Curso) carta).activar(jugador);
                 } else if (carta instanceof Profesor) {
-                    cache = ((Profesor) carta).activar(jugador);
+                    ((Profesor) carta).activar(jugador);
                 } else if (carta instanceof Carrete) {
-                    cache = ((Carrete) carta).activar(jugador);
+                    ((Carrete) carta).activar(jugador);
                 }
-                view.setprioridadUsuario(String.valueOf(cache));
                 juegoBot();
                 DesarrolloJuego(juego);
             }
@@ -85,6 +84,11 @@ public class UnJugador implements ModoJuego{
     }
     private void DesarrolloJuego(Duelo juego){
         if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {
+
+            System.out.println(jugador.getPrioridad());
+            System.out.println(pc.getPrioridad());
+            view.setprioridadUsuario(String.valueOf(jugador.getPrioridad()));
+            view.setprioridadEnemigo(String.valueOf(pc.getPrioridad()));
             carta = jugador.getCard();
             view.setCartaActual(((Carta) carta).getNombre());
 
@@ -141,23 +145,21 @@ public class UnJugador implements ModoJuego{
         if (carta instanceof Curso) {
             int rand = ThreadLocalRandom.current().nextInt(0, 2);
             if(rand == 1){
-                cache = ((Curso )carta).activar(pc, "defensa");
-                view.setprioridadEnemigo(String.valueOf(cache));
+                Globales.setModoUso("defensa");
+                ((Curso )carta).activar(pc);
                 view.setUltimaAccion("PC se defiende, obtiene "+String.valueOf(((Curso )carta).getPuntosHabilidad("defensa"))+ " puntos de prioridad");
             }
             else{
-                cache = ((Curso )carta).activar(jugador, "ataque");
-                view.setprioridadUsuario(String.valueOf(cache));
+                Globales.setModoUso("ataque");
+                ((Curso )carta).activar(jugador);
                 view.setUltimaAccion("PC ataca con "+String.valueOf(((Curso)carta).getPuntosHabilidad("ataque"))+" puntos de prioridad");
             }
         } else if (carta instanceof Profesor) {
-            cache = ((Profesor )carta).activar(pc);
-            view.setprioridadEnemigo(String.valueOf(cache));
+            ((Profesor )carta).activar(pc);
             view.setUltimaAccion("PC obtiene carta Profesor, pierde "+String.valueOf(((Profesor )carta).getPuntosHabilidad()+ " puntos de prioridad"));
 
         } else if (carta instanceof Carrete) {
-            cache = ((Carrete )carta).activar(pc);
-            view.setprioridadEnemigo(String.valueOf(cache));
+            ((Carrete )carta).activar(pc);
             view.setUltimaAccion("PC obtiene carta Carrete, recupera "+String.valueOf(((Carrete )carta).getPuntosHabilidad())+ " puntos de prioridad");
         }
         juego.setTurno(juego.getTurno()+1);

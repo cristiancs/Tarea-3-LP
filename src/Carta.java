@@ -5,7 +5,7 @@ public abstract class Carta {
     protected int puntosHabilidad;
     protected String tipo;
 
-    protected abstract int activar(Sansano jugador);
+    protected abstract void activar(Sansano jugador);
 
     public int getPuntosHabilidad (){ return puntosHabilidad; }
 

@@ -3,6 +3,14 @@ import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Globales {
+    private static String modoUso;
+
+    public static void setModoUso(String modoUso) {
+        Globales.modoUso = modoUso;
+    }
+    public static String getModoUso() {
+        return modoUso;
+    }
 
     public enum Cards {
         // Crear cartas de Curso
@@ -31,6 +39,7 @@ public class Globales {
         private String descripcion;
         private int puntos;
         private int def;
+
 
         // Constructor
         Cards(String cardName, String cardDes, int ataque, int defensa) {

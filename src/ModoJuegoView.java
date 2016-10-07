@@ -13,7 +13,7 @@ public class ModoJuegoView extends JFrame{
     private JButton a2JugadoresButton;
     private JPanel Portada;
 
-    public ModoJuegoView() {
+    public ModoJuegoView(Sansano s1, Sansano s2) {
         setContentPane(Portada);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,14 +23,14 @@ public class ModoJuegoView extends JFrame{
             {
 
                 ModoJuego juego = new UnJugador();
-                juego.iniciar(ModoJuegoView.this);
+                juego.iniciar(ModoJuegoView.this,s1,s2);
             }
         });
         a2JugadoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ModoJuego juego = new ConUnAmigo();
-                juego.iniciar(ModoJuegoView.this);
+                juego.iniciar(ModoJuegoView.this,s1,s2);
             }
         });
         setVisible(true);

@@ -1,11 +1,9 @@
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Collections;
 
 public class Sansano {
 
-    private final String name;
-    private static int prioridad = 3000;
+    private String name;
+    private int prioridad = 3000;
     private ArrayList mazo = new ArrayList<Carta>(30);
 
     public Sansano() {
@@ -13,42 +11,44 @@ public class Sansano {
     }
 
     public Sansano(String nombre) {
-        name = nombre;
+        this.name = nombre;
     }
 
     public String getName() {
         return name;
     }
+    public void setName(String nombre) { this.name = nombre; }
 
     public int getMazoSize() {
-        return mazo.size();
+        return this.mazo.size();
     }
 
     public int getPrioridad() {
-        return prioridad;
+        return this.prioridad;
     }
 
     public void updatePrioridad(int valorCambio) {
-        prioridad += valorCambio;
+        this.prioridad += valorCambio;
         if (prioridad > 3000) {
-            prioridad = 3000;
+            this.prioridad = 3000;
         }
         else if (prioridad < 0){
-            prioridad = 0;
+            this.prioridad = 0;
         }
+
     }
 
     public void addCard(Carta card){
-        mazo.add(card);
+        this.mazo.add(card);
     }
 
     public void addCard(Carta card, int pos){
-        mazo.add(pos, card);
+        this.mazo.add(pos, card);
     }
 
     public Object getCard() {
-        Object card = mazo.get(0);
-        mazo.remove(0);
+        Object card = this.mazo.get(0);
+        this.mazo.remove(0);
         return card;
     }
 }

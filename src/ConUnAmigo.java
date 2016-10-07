@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class ConUnAmigo extends Globales implements ModoJuego {
 
-    public void iniciar(ModoJuegoView oldScreen) {
+    public void iniciar(ModoJuegoView oldScreen, Sansano s1, Sansano s2) {
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         String nombreJugador1 = null;
@@ -15,6 +15,8 @@ public class ConUnAmigo extends Globales implements ModoJuego {
             nombreJugador2 = JOptionPane.showInputDialog(view, "Introduzca nombre Jugador 2:");
 
         }
+        s1.setName(nombreJugador1);
+        s2.setName(nombreJugador2);
         view.setTurnoJugadorLabel("Turno del jugador:");
         view.setNombreJugador(nombreJugador1);
     }
