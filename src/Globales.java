@@ -1,9 +1,19 @@
+import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Globales {
     private static String modoUso;
+    private static boolean modoUnJugador = true;
+
+    public static boolean isModoUnJugador() {
+        return modoUnJugador;
+    }
+
+    public static void setModoUnJugador(boolean modoUnJugador) {
+        Globales.modoUnJugador = modoUnJugador;
+    }
 
     public static void setModoUso(String modoUso) {
         Globales.modoUso = modoUso;
@@ -60,7 +70,7 @@ public class Globales {
         }
 
         public String getDescripcion() {
-            return this.descripcion;
+            return descripcion;
         }
 
         public int getPuntos() {
@@ -72,7 +82,7 @@ public class Globales {
         }
     }
 
-    public void asignarRandom (Sansano jugador){
+    public static void asignarRandom (Sansano jugador){
         int i, rand;
         Carta carta;
         for (Cards cartas : Cards.values()) {
@@ -135,6 +145,69 @@ public class Globales {
                     carta = new Carrete(cartas.getNombre(), cartas.getDescripcion(), cartas.getPuntos());
                     jugador.addCard(carta, rand);
             }
+        }
+    }
+
+    public static Object DesarrolloJugada(Duelo juego, PlayView view, Sansano jugador, Sansano jugador2){
+        if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {
+
+            JButton atacarButton = view.getAtacarButton();
+            JButton defendermeButton = view.getDefendermeButton();
+
+            System.out.println(jugador.getPrioridad());
+            System.out.println(jugador2.getPrioridad());
+            view.setprioridadUsuario(String.valueOf(jugador.getPrioridad()));
+            view.setprioridadEnemigo(String.valueOf(jugador2.getPrioridad()));
+            Object carta = jugador.getCard();
+            view.setCartaActual(((Carta) carta).getNombre());
+            if (carta instanceof Curso) {
+                defendermeButton.setText("Defenderme");
+                atacarButton.setEnabled(true);
+                defendermeButton.setEnabled(true);
+                view.setValorAtaque(String.valueOf(((Curso) carta).getAtaque()));
+                view.setValorDefensa(String.valueOf(((Curso) carta).getDefensa()));
+            } else if (carta instanceof Profesor) {
+                atacarButton.setEnabled(false);
+                defendermeButton.setEnabled(true);
+                defendermeButton.setText("Utilizar Carta");
+
+                view.setValorAtaque(String.valueOf(((Profesor) carta).getPuntosHabilidad()));
+                view.setValorDefensa(" ");
+            } else if (carta instanceof Carrete) {
+                atacarButton.setEnabled(false);
+                defendermeButton.setEnabled(true);
+                defendermeButton.setText("Utilizar Carta");
+                view.setValorDefensa(String.valueOf(((Carrete) carta).getPuntosHabilidad()));
+                view.setValorAtaque(" ");
+
+            }
+
+            if (jugador.getPrioridad() == 0) {
+                juego.setGanador(jugador2.getName());
+                view.setVisible(false);
+            }
+            if (jugador2.getPrioridad() == 0) {
+                juego.setGanador(jugador.getName());
+                view.setVisible(false);
+            }
+            juego.setTurno(juego.getTurno() + 1);
+            view.setNumeroTurno(String.valueOf(juego.getTurno()));
+            return carta;
+        }
+        else {
+            if (jugador.getPrioridad() >  jugador2.getPrioridad()) {
+                juego.setGanador(jugador.getName());
+                view.setVisible(false);
+            }
+            else if(jugador.getPrioridad() < jugador2.getPrioridad()) {
+                juego.setGanador(jugador2.getName());
+                view.setVisible(false);
+            }
+            else {
+                juego.setGanador("EMPATE");
+                view.setVisible(false);
+            }
+            return null;
         }
     }
 }

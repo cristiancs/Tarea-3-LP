@@ -5,4 +5,5 @@
 public interface ModoJuego {
     void asignarCartas(Sansano jugador, Sansano contrincante, int opcion);
     void iniciar(ModoJuegoView modoJuegoView, Sansano s1, Sansano s2);
+    void DesarrolloJuego (Sansano jugador1, Sansano jugador2);
 }

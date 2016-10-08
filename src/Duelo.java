@@ -1,5 +1,5 @@
 public class Duelo {
-    private int turno;
+    static private int turno;
     private String ganador;
     public Duelo(){
         turno = 0;
@@ -7,7 +7,7 @@ public class Duelo {
     }
     public int getTurno() {return turno;}
     public void setTurno(int turno) {
-        this.turno = turno;
+        Duelo.turno = turno;
     }
     public String getGanador() {
         return ganador;

@@ -15,8 +15,6 @@ public class UnJugador implements ModoJuego{
     private PlayView view;
     private Duelo juego;
     private Object carta;
-    private JButton atacarButton;
-    private JButton defendermeButton;
 
     public void iniciar(ModoJuegoView oldScreen, Sansano p1, Sansano p2) {
 
@@ -51,20 +49,27 @@ public class UnJugador implements ModoJuego{
         view.setNumeroTurno("1");
         view.setUltimaAccion("");
         asignarCartas(jugador, pc, opcion);
+    }
+
+    public void DesarrolloJuego (Sansano jugador, Sansano pc){
 
         juego = new Duelo();
-        atacarButton = view.getAtacarButton();
-        defendermeButton = view.getDefendermeButton();
+        JButton atacarButton = view.getAtacarButton();
+        JButton defendermeButton = view.getDefendermeButton();
         carta = null;
-        view.getAtacarButton().addActionListener(new ActionListener() {
+
+        atacarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Globales.setModoUso("ataque");
-                ((Curso) carta).activar(pc);
+                if (carta != null) {
+                    ((Curso) carta).activar(pc);
+                }
                 juegoBot();
-                DesarrolloJuego(juego);
+                carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
             }
         });
+
         defendermeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -77,69 +82,13 @@ public class UnJugador implements ModoJuego{
                     ((Carrete) carta).activar(jugador);
                 }
                 juegoBot();
-                DesarrolloJuego(juego);
+                carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
             }
         });
-        DesarrolloJuego(juego);
+        carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
     }
-    private void DesarrolloJuego(Duelo juego){
-        if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {
 
-            System.out.println(jugador.getPrioridad());
-            System.out.println(pc.getPrioridad());
-            view.setprioridadUsuario(String.valueOf(jugador.getPrioridad()));
-            view.setprioridadEnemigo(String.valueOf(pc.getPrioridad()));
-            carta = jugador.getCard();
-            view.setCartaActual(((Carta) carta).getNombre());
 
-            if (carta instanceof Curso) {
-                defendermeButton.setText("Defenderme");
-                atacarButton.setEnabled(true);
-                defendermeButton.setEnabled(true);
-                view.setValorAtaque(String.valueOf(((Curso) carta).getAtaque()));
-                view.setValorDefensa(String.valueOf(((Curso) carta).getDefensa()));
-            } else if (carta instanceof Profesor) {
-                atacarButton.setEnabled(false);
-                defendermeButton.setEnabled(true);
-                defendermeButton.setText("Utilizar Carta");
-
-                view.setValorAtaque(String.valueOf(((Profesor) carta).getPuntosHabilidad()));
-                view.setValorDefensa(" ");
-            } else if (carta instanceof Carrete) {
-                atacarButton.setEnabled(false);
-                defendermeButton.setEnabled(true);
-                defendermeButton.setText("Utilizar Carta");
-                view.setValorDefensa(String.valueOf(((Carrete) carta).getPuntosHabilidad()));
-                view.setValorAtaque(" ");
-
-            }
-
-            if (jugador.getPrioridad() == 0) {
-                juego.setGanador(jugador.getName());
-                view.setVisible(false);
-            }
-            if (pc.getPrioridad() == 0) {
-                juego.setGanador(pc.getName());
-                view.setVisible(false);
-            }
-            juego.setTurno(juego.getTurno() + 1);
-            view.setNumeroTurno(String.valueOf(juego.getTurno()));
-        }
-        else {
-            if (jugador.getPrioridad() >  pc.getPrioridad()) {
-                juego.setGanador(jugador.getName());
-                view.setVisible(false);
-            }
-            else if(jugador.getPrioridad() < pc.getPrioridad()) {
-                juego.setGanador(pc.getName());
-                view.setVisible(false);
-            }
-            else {
-                juego.setGanador("EMPATE");
-                view.setVisible(false);
-            }
-        }
-    }
     private void juegoBot(){
         Object carta = this.pc.getCard();
         if (carta instanceof Curso) {
@@ -212,6 +161,7 @@ public class UnJugador implements ModoJuego{
             }
         }
     }
+
     private void giveCartasEspecialesRandom(List listaCartas){
         int rand, i;
         i = 20;

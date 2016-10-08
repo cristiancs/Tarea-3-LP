@@ -3,6 +3,8 @@ import javax.swing.*;
 public class ConUnAmigo extends Globales implements ModoJuego {
 
     public void iniciar(ModoJuegoView oldScreen, Sansano s1, Sansano s2) {
+
+        Globales.setModoUnJugador(false);
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         String nombreJugador1 = null;
@@ -25,4 +27,6 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         asignarRandom(jugador);
         asignarRandom(contrincante);
     }
+
+    public void DesarrolloJuego (Sansano j1, Sansano j2){}
 }
