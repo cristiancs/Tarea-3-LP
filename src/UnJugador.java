@@ -116,7 +116,7 @@ public class UnJugador implements ModoJuego{
         }
     }
 
-    private void giveCartasNormales(List listaCartas){
+    private void giveCartasNormales(List<Carta> listaCartas){
         int i;
         for (Globales.Cards cartas : Globales.Cards.values()) {
             switch (cartas) {
@@ -152,7 +152,7 @@ public class UnJugador implements ModoJuego{
         }
     }
 
-    private void giveCartasEspecialesRandom(List listaCartas){
+    private void giveCartasEspecialesRandom(List<Carta> listaCartas){
         int rand, i;
         i = 20;
         for (Globales.Cards cartas : Globales.Cards.values()) {
@@ -182,7 +182,7 @@ public class UnJugador implements ModoJuego{
     }
     private void Defensivo(Sansano pc){
         // Insertar cartas jugador
-        List listaCartas = new ArrayList<Carta>(30);
+        List<Carta> listaCartas = new ArrayList<>(30);
         giveCartasNormales(listaCartas);
         listaCartas.sort((a, b) -> ((Curso) a).getDefensa() > ((Curso) b).getDefensa() ? -1 :
                 (((Curso) a).getDefensa() < ((Curso) b).getDefensa()) ? 1 : 0);
@@ -194,7 +194,7 @@ public class UnJugador implements ModoJuego{
     }
     private void Agresivo(Sansano pc){
         // Insertar cartas jugador
-        List listaCartas = new ArrayList<Carta>(30);
+        List<Carta> listaCartas = new ArrayList<>(30);
         giveCartasNormales(listaCartas);
         listaCartas.sort((a, b) -> ((Curso) a).getAtaque() > ((Curso) b).getAtaque() ? -1 :
                 (((Curso) a).getAtaque() < ((Curso) b).getAtaque()) ? 1 : 0);

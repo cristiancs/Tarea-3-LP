@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Sansano {
 
     private String name;
     private int prioridad = 3000;
-    private ArrayList mazo = new ArrayList<Carta>(30);
+    private List<Carta> mazo = new ArrayList<>(30);
 
     public Sansano() {
         name = "Oponente";
