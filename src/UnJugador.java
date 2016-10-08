@@ -77,13 +77,7 @@ public class UnJugador implements ModoJuego{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Globales.setModoUso("defensa");
-                if(carta instanceof Curso){
-                    ((Curso) carta).activar(jugador);
-                } else if (carta instanceof Profesor) {
-                    ((Profesor) carta).activar(jugador);
-                } else if (carta instanceof Carrete) {
-                    ((Carrete) carta).activar(jugador);
-                }
+                ((Carta)carta).activar(jugador);
                 juegoBot();
                 carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
             }
