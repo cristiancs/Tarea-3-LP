@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConUnAmigo extends Globales implements ModoJuego {
+public class ConUnAmigo implements ModoJuego {
 
     private Sansano j1, j2;
     private PlayView view;
@@ -34,8 +34,8 @@ public class ConUnAmigo extends Globales implements ModoJuego {
     }
 
     public void asignarCartas(Sansano jugador, Sansano contrincante) {
-        asignarRandom(jugador);
-        asignarRandom(contrincante);
+        Globales.asignarRandom(jugador);
+        Globales.asignarRandom(contrincante);
     }
 
     public void DesarrolloJuego (){
