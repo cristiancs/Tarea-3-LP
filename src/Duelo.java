@@ -6,8 +6,8 @@ public class Duelo {
         ganador = "";
     }
     public int getTurno() {return turno;}
-    public void setTurno(int turno) {
-        Duelo.turno = turno;
+    public void advanceTurno() {
+        Duelo.turno += 1;
     }
     public String getGanador() {
         return ganador;

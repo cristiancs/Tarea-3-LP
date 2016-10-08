@@ -81,6 +81,7 @@ public class UnJugador implements ModoJuego{
 
 
     private void juegoBot(){
+        System.out.println(juego.getTurno());
         Object carta = this.pc.getCard();
         if (carta instanceof Curso) {
             int rand = ThreadLocalRandom.current().nextInt(0, 2);
@@ -102,7 +103,7 @@ public class UnJugador implements ModoJuego{
             ((Carrete )carta).activar(pc);
             view.setUltimaAccion("PC obtiene carta Carrete, recupera "+String.valueOf(((Carrete )carta).getPuntosHabilidad())+ " puntos de prioridad");
         }
-        juego.setTurno(juego.getTurno()+1);
+        juego.advanceTurno();
         view.setNumeroTurno(String.valueOf(juego.getTurno()));
     }
 
