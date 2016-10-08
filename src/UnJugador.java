@@ -61,26 +61,20 @@ public class UnJugador implements ModoJuego{
         JButton defendermeButton = view.getDefendermeButton();
         carta = null;
 
-        atacarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Globales.setModoUso("ataque");
-                if (carta != null) {
-                    ((Curso) carta).activar(pc);
-                }
-                juegoBot();
-                carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
+        atacarButton.addActionListener(e -> {
+            Globales.setModoUso("ataque");
+            if (carta != null) {
+                ((Curso) carta).activar(pc);
             }
+            juegoBot();
+            carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
         });
 
-        defendermeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Globales.setModoUso("defensa");
-                ((Carta)carta).activar(jugador);
-                juegoBot();
-                carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
-            }
+        defendermeButton.addActionListener(e -> {
+            Globales.setModoUso("defensa");
+            ((Carta)carta).activar(jugador);
+            juegoBot();
+            carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
         });
         carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
     }

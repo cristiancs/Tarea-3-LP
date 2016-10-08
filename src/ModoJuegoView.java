@@ -19,24 +19,16 @@ public class ModoJuegoView extends JFrame{
         setContentPane(Portada);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        a1JugadorButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-
-                ModoJuego juego = new UnJugador();
-                juego.iniciar(ModoJuegoView.this,s1,s2);
-                juego.DesarrolloJuego();
-            }
+        a1JugadorButton.addActionListener(e -> {
+            ModoJuego juego = new UnJugador();
+            juego.iniciar(ModoJuegoView.this,s1,s2);
+            juego.DesarrolloJuego();
         });
-        a2JugadoresButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ModoJuego juego = new ConUnAmigo();
-                juego.iniciar(ModoJuegoView.this,s1,s2);
-                juego.DesarrolloJuego();
+        a2JugadoresButton.addActionListener(e -> {
+            ModoJuego juego = new ConUnAmigo();
+            juego.iniciar(ModoJuegoView.this,s1,s2);
+            juego.DesarrolloJuego();
 
-            }
         });
         setVisible(true);
     }
