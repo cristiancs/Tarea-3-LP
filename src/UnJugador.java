@@ -184,12 +184,8 @@ public class UnJugador implements ModoJuego{
         // Insertar cartas jugador
         List listaCartas = new ArrayList<Carta>(30);
         giveCartasNormales(listaCartas);
-        Collections.sort(listaCartas, new Comparator<Curso>() {
-            @Override
-            public int compare(Curso a, Curso b) {
-                return a.getDefensa() > b.getDefensa() ? -1 : (a.getDefensa() < b.getDefensa()) ? 1 : 0;
-            }
-        });
+        listaCartas.sort((a, b) -> ((Curso) a).getDefensa() > ((Curso) b).getDefensa() ? -1 :
+                (((Curso) a).getDefensa() < ((Curso) b).getDefensa()) ? 1 : 0);
 
         giveCartasEspecialesRandom(listaCartas);
         for (Object listaCarta : listaCartas) {
@@ -200,13 +196,8 @@ public class UnJugador implements ModoJuego{
         // Insertar cartas jugador
         List listaCartas = new ArrayList<Carta>(30);
         giveCartasNormales(listaCartas);
-        Collections.sort(listaCartas, new Comparator<Curso>() {
-            @Override
-            public int compare(Curso a, Curso b) {
-                return a.getAtaque() > b.getAtaque() ? -1 : (a.getAtaque() < b.getAtaque()) ? 1 : 0;
-            }
-        });
-
+        listaCartas.sort((a, b) -> ((Curso) a).getAtaque() > ((Curso) b).getAtaque() ? -1 :
+                (((Curso) a).getAtaque() < ((Curso) b).getAtaque()) ? 1 : 0);
         giveCartasEspecialesRandom(listaCartas);
         for (Object listaCarta : listaCartas) {
             pc.addCard((Carta) listaCarta);
