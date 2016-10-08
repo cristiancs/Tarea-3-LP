@@ -138,8 +138,10 @@ public class Globales {
     }
 
     public static Object DesarrolloJugada(Duelo juego, PlayView view, Sansano jugador, Sansano jugador2){
-        if(juego.getTurno() < 60 && juego.getGanador().equals("")) {
+        juego.advanceTurno();
+        if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {
 
+            view.setNumeroTurno(String.valueOf(juego.getTurno()));
             JButton atacarButton = view.getAtacarButton();
             JButton defendermeButton = view.getDefendermeButton();
 
@@ -179,8 +181,6 @@ public class Globales {
                 juego.setGanador(jugador.getName());
                 view.setVisible(false);
             }
-            juego.advanceTurno();
-            view.setNumeroTurno(String.valueOf(juego.getTurno()));
             return carta;
         }
         else {
