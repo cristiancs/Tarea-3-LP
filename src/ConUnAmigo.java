@@ -1,13 +1,22 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ConUnAmigo extends Globales implements ModoJuego {
+
+    private Sansano j1, j2;
+    private PlayView view;
+    private Duelo juego;
+    private Object carta;
 
     public void iniciar(ModoJuegoView oldScreen, Sansano s1, Sansano s2) {
 
         oldScreen.setVisible(false);
-        PlayView view = new PlayView();
+        view = new PlayView();
         String nombreJugador1 = null;
         String nombreJugador2 = null;
+        j1 = s1;
+        j2 = s2;
         while ((nombreJugador1 == null) || nombreJugador1.isEmpty()) {
             nombreJugador1 = JOptionPane.showInputDialog(view, "Introduzca nombre Jugador 1:");
 
@@ -20,7 +29,8 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         s2.setName(nombreJugador2);
         view.setTurnoJugadorLabel("Turno del jugador:");
         view.setNombreJugador(nombreJugador1);
-        asignarCartas(s1, s2);
+        asignarCartas(j1, j2);
+        juego = new Duelo();
     }
 
     public void asignarCartas(Sansano jugador, Sansano contrincante) {
@@ -28,5 +38,6 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         asignarRandom(contrincante);
     }
 
-    public void DesarrolloJuego (Sansano j1, Sansano j2){}
+    public void DesarrolloJuego (){
+    }
 }

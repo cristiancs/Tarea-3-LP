@@ -26,7 +26,7 @@ public class ModoJuegoView extends JFrame{
 
                 ModoJuego juego = new UnJugador();
                 juego.iniciar(ModoJuegoView.this,s1,s2);
-                juego.DesarrolloJuego(s1, s2);
+                juego.DesarrolloJuego();
             }
         });
         a2JugadoresButton.addActionListener(new ActionListener() {
@@ -34,7 +34,7 @@ public class ModoJuegoView extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 ModoJuego juego = new ConUnAmigo();
                 juego.iniciar(ModoJuegoView.this,s1,s2);
-                juego.DesarrolloJuego(s1, s2);
+                juego.DesarrolloJuego();
 
             }
         });

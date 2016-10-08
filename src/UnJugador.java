@@ -11,7 +11,8 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by Cristian Navarrete on 27-09-16.
  */
 public class UnJugador implements ModoJuego{
-    private Sansano pc,jugador;
+
+    private Sansano jugador, pc;
     private PlayView view;
     private Duelo juego;
     private Object carta;
@@ -51,11 +52,11 @@ public class UnJugador implements ModoJuego{
         view.setUltimaAccion("");
         ModoJuego = opcion;
         asignarCartas(jugador, pc);
+        juego = new Duelo();
     }
 
-    public void DesarrolloJuego (Sansano jugador, Sansano pc){
+    public void DesarrolloJuego (){
 
-        juego = new Duelo();
         JButton atacarButton = view.getAtacarButton();
         JButton defendermeButton = view.getDefendermeButton();
         carta = null;
@@ -118,8 +119,7 @@ public class UnJugador implements ModoJuego{
     }
 
     public void asignarCartas(Sansano jugador, Sansano pc) {
-        Globales global = new Globales();
-        global.asignarRandom(jugador);
+        Globales.asignarRandom(jugador);
         if(this.ModoJuego == 0){
             Agresivo(pc);
         }
@@ -210,7 +210,7 @@ public class UnJugador implements ModoJuego{
     }
     private void Agresivo(Sansano pc){
         // Insertar cartas jugador
-        List listaCartas = new ArrayList(30);
+        List listaCartas = new ArrayList<Carta>(30);
         giveCartasNormales(listaCartas);
         Collections.sort(listaCartas, new Comparator<Curso>() {
             @Override
