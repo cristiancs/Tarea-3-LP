@@ -4,7 +4,6 @@ public class ConUnAmigo extends Globales implements ModoJuego {
 
     public void iniciar(ModoJuegoView oldScreen, Sansano s1, Sansano s2) {
 
-        Globales.setModoUnJugador(false);
         oldScreen.setVisible(false);
         PlayView view = new PlayView();
         String nombreJugador1 = null;
@@ -21,9 +20,10 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         s2.setName(nombreJugador2);
         view.setTurnoJugadorLabel("Turno del jugador:");
         view.setNombreJugador(nombreJugador1);
+        asignarCartas(s1, s2);
     }
 
-    public void asignarCartas(Sansano jugador, Sansano contrincante, int opcion) {
+    public void asignarCartas(Sansano jugador, Sansano contrincante) {
         asignarRandom(jugador);
         asignarRandom(contrincante);
     }

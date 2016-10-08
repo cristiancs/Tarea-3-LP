@@ -15,6 +15,7 @@ public class UnJugador implements ModoJuego{
     private PlayView view;
     private Duelo juego;
     private Object carta;
+    private int ModoJuego;
 
     public void iniciar(ModoJuegoView oldScreen, Sansano p1, Sansano p2) {
 
@@ -48,7 +49,8 @@ public class UnJugador implements ModoJuego{
         view.setprioridadUsuario("3000");
         view.setNumeroTurno("1");
         view.setUltimaAccion("");
-        asignarCartas(jugador, pc, opcion);
+        ModoJuego = opcion;
+        asignarCartas(jugador, pc);
     }
 
     public void DesarrolloJuego (Sansano jugador, Sansano pc){
@@ -115,13 +117,13 @@ public class UnJugador implements ModoJuego{
         view.setNumeroTurno(String.valueOf(juego.getTurno()));
     }
 
-    public void asignarCartas(Sansano jugador, Sansano pc,int opcion) {
+    public void asignarCartas(Sansano jugador, Sansano pc) {
         Globales global = new Globales();
         global.asignarRandom(jugador);
-        if(opcion == 0){
+        if(this.ModoJuego == 0){
             Agresivo(pc);
         }
-        else if(opcion == 1){
+        else if(this.ModoJuego == 1){
             Defensivo(pc);
         }
     }

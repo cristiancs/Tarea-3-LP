@@ -1,19 +1,8 @@
 import javax.swing.*;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Globales {
     private static String modoUso;
-    private static boolean modoUnJugador = true;
-
-    public static boolean isModoUnJugador() {
-        return modoUnJugador;
-    }
-
-    public static void setModoUnJugador(boolean modoUnJugador) {
-        Globales.modoUnJugador = modoUnJugador;
-    }
 
     public static void setModoUso(String modoUso) {
         Globales.modoUso = modoUso;
