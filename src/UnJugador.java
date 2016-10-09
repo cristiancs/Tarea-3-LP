@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by Cristian Navarrete on 27-09-16.
  */
-public class UnJugador implements ModoJuego{
+public class UnJugador extends Globales implements ModoJuego{
 
     private Sansano jugador, pc;
     private PlayView view;
@@ -67,16 +67,16 @@ public class UnJugador implements ModoJuego{
                 ((Curso) carta).activar(pc);
             }
             juegoBot();
-            carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
+            carta = DesarrolloJugada(juego, view, jugador, pc);
         });
 
         defendermeButton.addActionListener(e -> {
             Globales.setModoUso("defensa");
             ((Carta)carta).activar(jugador);
             juegoBot();
-            carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
+            carta = DesarrolloJugada(juego, view, jugador, pc);
         });
-        carta = Globales.DesarrolloJugada(juego, view, jugador, pc);
+        carta = DesarrolloJugada(juego, view, jugador, pc);
     }
 
 
@@ -107,7 +107,7 @@ public class UnJugador implements ModoJuego{
     }
 
     public void asignarCartas(Sansano jugador, Sansano pc) {
-        Globales.asignarRandom(jugador);
+        asignarRandom(jugador);
         if(this.ModoJuego == 0){
             Agresivo(pc);
         }

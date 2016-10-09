@@ -1,17 +1,17 @@
 import javax.swing.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Globales {
+class Globales {
     private static String modoUso;
 
-    public static void setModoUso(String modoUso) {
+    protected static void setModoUso(String modoUso) {
         Globales.modoUso = modoUso;
     }
-    public static String getModoUso() {
+    protected static String getModoUso() {
         return modoUso;
     }
 
-    public enum Cards {
+    protected enum Cards {
         // Crear cartas de Curso
         MATE("Matemáticas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),
         FIS("Física", "Ataca 450/Cura 150 puntos de prioridad.", 450, 150),
@@ -71,7 +71,7 @@ public class Globales {
         }
     }
 
-    public static void asignarRandom (Sansano jugador){
+    protected static void asignarRandom (Sansano jugador){
         int i, rand;
         Carta carta;
         for (Cards cartas : Cards.values()) {
@@ -137,7 +137,7 @@ public class Globales {
         }
     }
 
-    public static Object DesarrolloJugada(Duelo juego, PlayView view, Sansano jugador, Sansano jugador2){
+    protected static Object DesarrolloJugada(Duelo juego, PlayView view, Sansano jugador, Sansano jugador2){
         juego.advanceTurno();
         if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {
 
