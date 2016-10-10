@@ -10,7 +10,7 @@ public class ConUnAmigo extends Globales implements ModoJuego {
     private Object carta;
 
     public void iniciar(ModoJuegoView oldScreen, Sansano s1, Sansano s2) {
-
+        Globales.setmodoJuego("conunamigo");
         oldScreen.setVisible(false);
         view = new PlayView();
         String nombreJugador1 = null;
@@ -29,6 +29,7 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         s2.setName(nombreJugador2);
         view.setTurnoJugadorLabel("Turno del jugador:");
         view.setNombreJugador(nombreJugador1);
+        view.setUltimaAccion("");
         asignarCartas(j1, j2);
         juego = new Duelo();
     }
@@ -46,20 +47,27 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         atacarButton.addActionListener(e -> {
             Globales.setModoUso("ataque");
             if (carta != null) {
-                ((Curso) carta).activar(j2, view);
+                if(juego.getTurno() % 2 == 0){
+                    ((Curso) carta).activar(j1, view);
+                }
+                else{
+                    ((Curso) carta).activar(j2, view);
+                }
             }
             carta = DesarrolloJugada(juego, view, j1, j2);
         });
 
         defendermeButton.addActionListener(e -> {
             Globales.setModoUso("defensa");
-            ((Carta)carta).activar(j1, view);
-
-
-
+            if(juego.getTurno() % 2 == 0){
+                ((Carta) carta).activar(j2, view);
+            }
+            else{
+                ((Carta) carta).activar(j1, view);
+            }
             carta = DesarrolloJugada(juego, view, j1, j2);
         });
-        carta = DesarrolloJugada(juego, view, j2, j1);
+        carta = DesarrolloJugada(juego, view, j1, j2);
 
     }
 }

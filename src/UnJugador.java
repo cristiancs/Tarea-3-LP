@@ -19,7 +19,7 @@ public class UnJugador extends Globales implements ModoJuego{
     private int ModoJuego;
 
     public void iniciar(ModoJuegoView oldScreen, Sansano p1, Sansano p2) {
-
+        Globales.setmodoJuego("unjugador");
         oldScreen.setVisible(false);
         view = new PlayView();
         pc = p2;

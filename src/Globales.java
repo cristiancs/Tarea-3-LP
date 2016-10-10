@@ -1,16 +1,22 @@
 import javax.swing.*;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Globales {
     private static String modoUso;
-
+    private static String modoJuego;
     protected static void setModoUso(String modoUso) {
         Globales.modoUso = modoUso;
     }
     protected static String getModoUso() {
         return modoUso;
     }
-
+    protected static void setmodoJuego(String modoJuego) {
+        Globales.modoJuego = modoJuego;
+    }
+    protected static String getmodoJuego() {
+        return modoJuego;
+    }
     protected enum Cards {
         // Crear cartas de Curso
         MATE("Matemáticas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),
@@ -156,7 +162,13 @@ class Globales {
             System.out.println(jugador2.getPrioridad());
             view.setprioridadUsuario(String.valueOf(jugador.getPrioridad()));
             view.setprioridadEnemigo(String.valueOf(jugador2.getPrioridad()));
-            Object carta = jugador.getCard();
+            Object carta;
+            if(juego.getTurno() % 2 == 0 && Globales.getmodoJuego().equals("conunamigo")){
+                carta = jugador2.getCard();
+            }
+            else{
+                carta = jugador.getCard();
+            }
             view.setCartaActual(((Carta) carta).getNombre());
             if (carta instanceof Curso) {
                 defendermeButton.setText("Defenderme");
