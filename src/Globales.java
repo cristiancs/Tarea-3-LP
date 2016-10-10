@@ -141,6 +141,13 @@ class Globales {
         juego.advanceTurno();
         if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {
 
+            if(juego.getTurno() % 2 == 0){
+                view.setNombreJugador(jugador2.getName());
+            }
+            else{
+                view.setNombreJugador(jugador.getName());
+            }
+
             view.setNumeroTurno(String.valueOf(juego.getTurno()));
             JButton atacarButton = view.getAtacarButton();
             JButton defendermeButton = view.getDefendermeButton();

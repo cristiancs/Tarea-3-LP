@@ -39,5 +39,27 @@ public class ConUnAmigo extends Globales implements ModoJuego {
     }
 
     public void DesarrolloJuego (){
+        JButton atacarButton = view.getAtacarButton();
+        JButton defendermeButton = view.getDefendermeButton();
+        carta = null;
+
+        atacarButton.addActionListener(e -> {
+            Globales.setModoUso("ataque");
+            if (carta != null) {
+                ((Curso) carta).activar(j2, view);
+            }
+            carta = DesarrolloJugada(juego, view, j1, j2);
+        });
+
+        defendermeButton.addActionListener(e -> {
+            Globales.setModoUso("defensa");
+            ((Carta)carta).activar(j1, view);
+
+
+
+            carta = DesarrolloJugada(juego, view, j1, j2);
+        });
+        carta = DesarrolloJugada(juego, view, j2, j1);
+
     }
 }

@@ -6,6 +6,7 @@ public abstract class Carta {
     protected String tipo;
 
     protected abstract void activar(Sansano jugador);
+    protected abstract void activar(Sansano jugador, PlayView view);
 
     public int getPuntosHabilidad (){ return puntosHabilidad; }
 

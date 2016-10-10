@@ -89,20 +89,20 @@ public class UnJugador extends Globales implements ModoJuego{
             if(rand == 1){
                 Globales.setModoUso("defensa");
                 ((Curso )carta).activar(pc);
-                view.setUltimaAccion("PC se defiende, obtiene "+String.valueOf(((Curso )carta).getPuntosHabilidad("defensa"))+ " puntos de prioridad");
+                view.setUltimaAccion(pc.getName()+" se defiende, obtiene "+String.valueOf(((Curso )carta).getPuntosHabilidad("defensa"))+ " puntos de prioridad");
             }
             else{
                 Globales.setModoUso("ataque");
                 ((Curso )carta).activar(jugador);
-                view.setUltimaAccion("PC ataca con "+String.valueOf(((Curso)carta).getPuntosHabilidad("ataque"))+" puntos de prioridad");
+                view.setUltimaAccion(pc.getName()+" ataca con "+String.valueOf(((Curso)carta).getPuntosHabilidad("ataque"))+" puntos de prioridad");
             }
         } else if (carta instanceof Profesor) {
             ((Profesor )carta).activar(pc);
-            view.setUltimaAccion("PC obtiene carta Profesor, pierde "+String.valueOf(((Profesor )carta).getPuntosHabilidad()+ " puntos de prioridad"));
+            view.setUltimaAccion(pc.getName()+" obtiene carta Profesor, pierde "+String.valueOf(((Profesor )carta).getPuntosHabilidad()+ " puntos de prioridad"));
 
         } else if (carta instanceof Carrete) {
             ((Carrete )carta).activar(pc);
-            view.setUltimaAccion("PC obtiene carta Carrete, recupera "+String.valueOf(((Carrete )carta).getPuntosHabilidad())+ " puntos de prioridad");
+            view.setUltimaAccion(pc.getName()+" obtiene carta Carrete, recupera "+String.valueOf(((Carrete )carta).getPuntosHabilidad())+ " puntos de prioridad");
         }
     }
 

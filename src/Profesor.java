@@ -12,6 +12,11 @@ public class Profesor extends Carta {
     public void activar(Sansano jugador) {
         Recorregir(jugador);
     }
+    public void activar(Sansano jugador, PlayView view) {
+        view.setUltimaAccion(jugador.getName()+" obtiene carta Carrete, pierde "+String.valueOf(danio)+ " puntos de prioridad");
+        Recorregir(jugador);
+    }
+
 
     private void Recorregir (Sansano jugador){
         jugador.updatePrioridad(-danio);

@@ -51,4 +51,14 @@ public class Curso extends Carta {
             Aprobar(jugador);
         }
     }
+    public void activar(Sansano jugador, PlayView view){
+        if(Globales.getModoUso().equals("ataque") ){
+            view.setUltimaAccion(jugador.getName()+" es atacado, pierde "+String.valueOf(ataque)+ " puntos de prioridad");
+            Reprobar(jugador);
+        }
+        else{
+            view.setUltimaAccion(jugador.getName()+" se defiende, obtiene "+String.valueOf(defensa)+ " puntos de prioridad");
+            Aprobar(jugador);
+        }
+    }
 }

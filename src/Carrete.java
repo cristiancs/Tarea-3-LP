@@ -12,6 +12,10 @@ public class Carrete extends Carta {
     public void activar(Sansano jugador) {
         Carretear(jugador);
     }
+    public void activar(Sansano jugador, PlayView view) {
+        Carretear(jugador);
+        view.setUltimaAccion(jugador.getName()+" obtiene carta Carrete, recupera "+String.valueOf(curacion)+ " puntos de prioridad");
+    }
 
     private void Carretear(Sansano jugador) {
         jugador.updatePrioridad(curacion);
