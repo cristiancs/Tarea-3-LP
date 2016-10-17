@@ -5,8 +5,7 @@ JAR_PATH=$(BUILD_PATH)/jar
 
 classes: src/Juego.java
 	mkdir -p $(BIN_PATH)
-	cp -R external/com $(BIN_PATH)/com
-	javac -sourcepath src -d $(BIN_PATH) $<
+	javac -classpath external/forms_rt.jar -sourcepath src -d $(BIN_PATH) $<
 
 jar: classes
 	mkdir $(JAR_PATH)
