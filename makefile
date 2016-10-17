@@ -5,13 +5,14 @@ JAR_PATH=$(BUILD_PATH)/jar
 
 classes: src/Juego.java
 	mkdir -p $(BIN_PATH)
+	cp -R external/com $(BIN_PATH)/com
 	javac -sourcepath src -d $(BIN_PATH) $<
 
 jar: classes
-	mkdir -p out/jar/
+	mkdir $(JAR_PATH)
 	jar cfm $(JAR_PATH)/$(NAME).jar manifest -C $(BIN_PATH) .
 
-main: jar
+main: classes
 
 run:
 	java -jar $(JAR_PATH)/$(NAME).jar

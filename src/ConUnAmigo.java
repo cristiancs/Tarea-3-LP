@@ -1,7 +1,4 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class ConUnAmigo extends Globales implements ModoJuego {
 
     private Sansano j1, j2;
