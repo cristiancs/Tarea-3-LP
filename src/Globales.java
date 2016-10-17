@@ -3,20 +3,9 @@ import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Globales {
+
     private static String modoUso;
     private static String modoJuego;
-    protected static void setModoUso(String modoUso) {
-        Globales.modoUso = modoUso;
-    }
-    protected static String getModoUso() {
-        return modoUso;
-    }
-    protected static void setmodoJuego(String modoJuego) {
-        Globales.modoJuego = modoJuego;
-    }
-    protected static String getmodoJuego() {
-        return modoJuego;
-    }
     protected enum Cards {
         // Crear cartas de Curso
         MATE("Matemáticas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),
@@ -47,6 +36,15 @@ class Globales {
 
 
         // Constructor
+/******** Funcion: Cards ********************
+Descripcion: Constructor del enum Cards, establece los atributos
+básicos: nombre, descripcion, puntos (ataque), defensa
+Parametros:
+String cardName
+String cardDes
+int ataque
+int defensa
+************************************************/
         Cards(String cardName, String cardDes, int ataque, int defensa) {
             this.nombre = cardName;
             this.descripcion = cardDes;
@@ -54,29 +52,108 @@ class Globales {
             this.def = defensa;
         }
 
+/******** Funcion: Cards ********************
+Descripcion: Constructor Cards para carta con solo un atributo
+de puntos (ataque o defensa)
+Parametros:
+String cardName
+String cardDes
+int puntosHabilidad
+************************************************/
         Cards(String cardName, String cardDes, int puntosHabilidad) {
             this.nombre = cardName;
             this.descripcion = cardDes;
             this.puntos = puntosHabilidad;
         }
 
+/******** Funcion: getNombre ********************
+Descripcion: Obtiene el nombre de la Carta en el enum
+Parametros:
+None
+Retorno: String con el nombre de la carta
+************************************************/
         public String getNombre() {
             return this.nombre;
         }
 
+/******** Funcion: getDescripcion ********************
+Descripcion: Obtiene la descripcion de la Carta en el enum
+Parametros:
+None
+Retorno: String con la descripcion de la carta
+************************************************/
         public String getDescripcion() {
             return descripcion;
         }
 
+/******** Funcion: getPuntos ********************
+Descripcion: Obtiene los puntos de  habilidad de la carta en el enum
+Parametros:
+None
+Retorno: int con los puntos de habilidad
+************************************************/
         public int getPuntos() {
             return puntos;
         }
 
+/******** Funcion: getDef ********************
+Descripcion: Obtiene la defensa de la carta cuando sea pertinente
+Parametros:
+None
+Retorno: int con la defensa
+************************************************/
         public int getDef() {
             return def;
         }
     }
 
+/******** Funcion: setModoUso ********************
+Descripcion: Establece el modo de uso actual de la Carta
+correspondiente
+Parametros:
+String modoUso
+Retorno: void
+************************************************/
+    protected static void setModoUso(String modoUso) {
+        Globales.modoUso = modoUso;
+    }
+
+/******** Funcion: getModoUso ********************
+Descripcion: Obtiene el modo de uso actual para la carta actual
+Parametros:
+None
+Retorno: String con el modo de uso
+************************************************/
+    protected static String getModoUso() {
+        return modoUso;
+    }
+
+/******** Funcion: setmodojuego ********************
+Descripcion: Establece el modo de juego de la partida
+Parametros:
+String modoJuego
+Retorno: void
+************************************************/
+    protected static void setmodoJuego(String modoJuego) {
+        Globales.modoJuego = modoJuego;
+    }
+
+/******** Funcion: getmodojuego ********************
+Descripcion: Obtiene el modo de juego de la partida
+Parametros:
+None
+Retorno: String con el modo de juego
+************************************************/
+    protected static String getmodoJuego() {
+        return modoJuego;
+    }
+
+/******** Funcion: asignarRandom ********************
+Descripcion: asigna las cartas al jugador al azar
+Parametros:
+Sansano jugador
+Retorno: void
+************************************************/
     protected static void asignarRandom (Sansano jugador){
         int i, rand;
         Carta carta;
@@ -143,6 +220,16 @@ class Globales {
         }
     }
 
+/******** Funcion: DesarrolloJuegada ********************
+Descripcion: Desarrolla la ronda de juego en la partida
+Parametros:
+Duelo juego
+PlayView view
+Sansano jugador
+Sansano jugador2
+Retorno: Object que representa al elemento en la lista del mazo
+que a su vez corresponde a una carta
+************************************************/
     protected static Object DesarrolloJugada(Duelo juego, PlayView view, Sansano jugador, Sansano jugador2){
         juego.advanceTurno();
         if(juego.getTurno() <= 60 && juego.getGanador().equals("")) {

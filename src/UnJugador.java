@@ -7,9 +7,6 @@ import java.util.List;
 import java.util.Comparator;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Created by Cristian Navarrete on 27-09-16.
- */
 public class UnJugador extends Globales implements ModoJuego{
 
     private Sansano jugador, pc;
@@ -18,6 +15,15 @@ public class UnJugador extends Globales implements ModoJuego{
     private Object carta;
     private int ModoJuego;
 
+/******** Funcion: iniciar ********************
+Descripcion: Inicializa la partida con ciertos parametros y la ventana en la
+modalidad contra la computadora
+Parametros:
+ModoJuegoView oldScreen
+Sansano p1
+Sansano p2
+Retorno: void
+************************************************/
     public void iniciar(ModoJuegoView oldScreen, Sansano p1, Sansano p2) {
         Globales.setmodoJuego("unjugador");
         oldScreen.setVisible(false);
@@ -55,6 +61,13 @@ public class UnJugador extends Globales implements ModoJuego{
         juego = new Duelo();
     }
 
+/******** Funcion: DesarrolloJuego ********************
+Descripcion: Desarrolla el juego entre el jugador y la computadora
+en todos los turnos, actualizando parámetros y ventana según corresponda
+Parametros:
+None
+Retorno: void
+************************************************/
     public void DesarrolloJuego (){
 
         JButton atacarButton = view.getAtacarButton();
@@ -79,7 +92,12 @@ public class UnJugador extends Globales implements ModoJuego{
         carta = DesarrolloJugada(juego, view, jugador, pc);
     }
 
-
+/******** Funcion: juegoBot ********************
+Descripcion: Realiza jugada correspondiente a la computadora
+Parametros:
+None
+Retorno: void
+************************************************/
     private void juegoBot(){
         Object carta = this.pc.getCard();
         juego.advanceTurno();
@@ -106,6 +124,14 @@ public class UnJugador extends Globales implements ModoJuego{
         }
     }
 
+/******** Funcion: asignarCartas ********************
+Descripcion: asigna las cartas a los mazos del jugador y
+de la computadora según las modalidades de cada uno
+Parametros:
+Sansano jugador
+Sansano pc
+Retorno: void
+************************************************/
     public void asignarCartas(Sansano jugador, Sansano pc) {
         asignarRandom(jugador);
         if(this.ModoJuego == 0){
@@ -116,6 +142,13 @@ public class UnJugador extends Globales implements ModoJuego{
         }
     }
 
+/******** Funcion: giveCartasNormales ********************
+Descripcion: Reparte cartas tipo Curso que deben ser ordenadas,
+pensado para modalidad agresiva y defensiva del pc
+Parametros:
+List<Carta> listaCartas
+Retorno: void
+************************************************/
     private void giveCartasNormales(List<Carta> listaCartas){
         int i;
         for (Globales.Cards cartas : Globales.Cards.values()) {
@@ -152,6 +185,13 @@ public class UnJugador extends Globales implements ModoJuego{
         }
     }
 
+/******** Funcion: giveCartasEspecialesRandom ********************
+Descripcion: Reparte las cartas tipo Profesor y Carrete, las cuales deben
+ir en posiciones al azar, pensado para la computadora con Curso ya repartidas
+Parametros:
+List<Carta> listaCartas
+Retorno: void
+************************************************/
     private void giveCartasEspecialesRandom(List<Carta> listaCartas){
         int rand, i;
         i = 20;
@@ -180,6 +220,14 @@ public class UnJugador extends Globales implements ModoJuego{
 
 
     }
+
+/******** Funcion: Defensivo ********************
+Descripcion: reparte las cartas al computador en modalidad
+defensiva
+Parametros:
+Sansano pc
+Retorno: void
+************************************************/
     private void Defensivo(Sansano pc){
         // Insertar cartas jugador
         List<Carta> listaCartas = new ArrayList<>(30);
@@ -192,6 +240,14 @@ public class UnJugador extends Globales implements ModoJuego{
             pc.addCard((Carta) listaCarta);
         }
     }
+
+/******** Funcion: Agresivo ********************
+Descripcion: reparte las cartas al computador en modalidad
+agresiva
+Parametros:
+Sansano pc
+Retorno: void
+************************************************/
     private void Agresivo(Sansano pc){
         // Insertar cartas jugador
         List<Carta> listaCartas = new ArrayList<>(30);

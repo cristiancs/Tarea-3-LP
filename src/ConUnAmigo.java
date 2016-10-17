@@ -6,6 +6,15 @@ public class ConUnAmigo extends Globales implements ModoJuego {
     private Duelo juego;
     private Object carta;
 
+/******** Funcion: iniciar ********************
+Descripcion: Establece parametros iniciales del juego con dos jugadores, tales como:
+actualizar ventana, asignar cartas a mazos, obtener nombres, etc
+Parametros:
+ModoJuegoView oldScreen
+Sansano s1
+Sansano s2
+Retorno: void
+************************************************/
     public void iniciar(ModoJuegoView oldScreen, Sansano s1, Sansano s2) {
         Globales.setmodoJuego("conunamigo");
         oldScreen.setVisible(false);
@@ -31,11 +40,25 @@ public class ConUnAmigo extends Globales implements ModoJuego {
         juego = new Duelo();
     }
 
+/******** Funcion: asignarCartas ********************
+Descripcion: asigna las cartas a ambos jugadores usando azar en ambos casos
+Parametros:
+Sansano jugador
+Sansano contrincante
+Retorno: void
+************************************************/
     public void asignarCartas(Sansano jugador, Sansano contrincante) {
         asignarRandom(jugador);
         asignarRandom(contrincante);
     }
 
+/******** Funcion: DesarrolloJuego ********************
+Descripcion: hace el desarrollo del juego en todos los turnos,
+actualizando variables correspondientes en Sansanos y la ventana
+Parametros:
+None
+Retorno: void
+************************************************/
     public void DesarrolloJuego (){
         JButton atacarButton = view.getAtacarButton();
         JButton defendermeButton = view.getDefendermeButton();
