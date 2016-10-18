@@ -2,7 +2,7 @@ Integrantes:
 Juan Pablo Jorquera Zapata       201573533-6
 Cristian Andres Navarrete Galvez 201573549-2
 
-La interfaz gráfica fue hecha usando javax.swing
+La interfaz gráfica fue hecha usando javax Swing.
 
 Instrucciones:
 
