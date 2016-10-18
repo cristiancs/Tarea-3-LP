@@ -1,3 +1,5 @@
+package sansastone;
+
 public class Duelo {
 
     static private int turno;

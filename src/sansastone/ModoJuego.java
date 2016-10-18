@@ -1,6 +1,5 @@
-/**
- * Created by Cristian Navarrete on 27-09-16.
- */
+package sansastone;
+
 public interface ModoJuego {
 
 /******** Funcion: asignarCartas ********************

@@ -1,3 +1,5 @@
+package sansastone;
+
 public class Carrete extends Carta {
 
     protected int curacion;
@@ -27,6 +29,7 @@ Retorno: void
     public void activar(Sansano jugador) {
         Carretear(jugador);
     }
+
 /******** Funcion: activar ********************
 Descripcion: utiliza Carretear sobre jugador y ademas actualiza
 la ventana con la información pertinente
@@ -39,6 +42,7 @@ Retorno: void
         Carretear(jugador);
         view.setUltimaAccion(jugador.getName()+" obtiene carta Carrete, recupera "+String.valueOf(curacion)+ " puntos de prioridad");
     }
+    
 /******** Funcion: Carretear ********************
 Descripcion: Actualiza la prioridad según la funcionalidad de las cartas
 tipo Carrete

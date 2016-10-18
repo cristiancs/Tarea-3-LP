@@ -1,3 +1,5 @@
+package sansastone;
+
 import javax.swing.*;
 public class ConUnAmigo extends Globales implements ModoJuego {
 

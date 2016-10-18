@@ -1,3 +1,5 @@
+package sansastone;
+
 public class Juego {
 
 /******** Funcion: main ********************

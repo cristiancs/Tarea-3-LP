@@ -1,3 +1,5 @@
+package sansastone;
+
 public class Profesor extends Carta {
 
     protected int danio;

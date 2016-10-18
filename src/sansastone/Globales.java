@@ -1,3 +1,5 @@
+package sansastone;
+
 import javax.swing.*;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
@@ -245,8 +247,6 @@ que a su vez corresponde a una carta
             JButton atacarButton = view.getAtacarButton();
             JButton defendermeButton = view.getDefendermeButton();
 
-            System.out.println(jugador.getPrioridad());
-            System.out.println(jugador2.getPrioridad());
             view.setprioridadUsuario(String.valueOf(jugador.getPrioridad()));
             view.setprioridadEnemigo(String.valueOf(jugador2.getPrioridad()));
             Object carta;

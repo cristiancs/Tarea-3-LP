@@ -1,3 +1,5 @@
+package sansastone;
+
 public class Curso extends Carta {
 
     protected int ataque, defensa;
