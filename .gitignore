@@ -2,3 +2,5 @@ build/*
 .idea/*
 .idea/workspace.xml
 .iml/*
+out/production/Tarea-3-LP/*
+out/bin/*
