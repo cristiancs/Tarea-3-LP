@@ -65,7 +65,7 @@ Retorno: void
 
 /******** Funcion: DesarrolloJuego ********************
 Descripcion: Desarrolla el juego entre el jugador y la computadora
-en todos los turnos, actualizando parámetros y ventana según corresponda
+en todos los turnos, actualizando parametros y ventana segun corresponda
 Parametros:
 None
 Retorno: void
@@ -128,7 +128,7 @@ Retorno: void
 
 /******** Funcion: asignarCartas ********************
 Descripcion: asigna las cartas a los mazos del jugador y
-de la computadora según las modalidades de cada uno
+de la computadora segun las modalidades de cada uno
 Parametros:
 Sansano jugador
 Sansano pc

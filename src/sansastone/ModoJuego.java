@@ -4,7 +4,7 @@ public interface ModoJuego {
 
 /******** Funcion: asignarCartas ********************
 Descripcion: asigna la cartas a ambos jugadores utilizando 
-distintas metodologías
+distintas metodologias
 Parametros:
 Sansano jugador
 Sansano contrincante
@@ -13,7 +13,7 @@ Retorno: void
     void asignarCartas(Sansano jugador, Sansano contrincante);
 
 /******** Funcion: iniciar ********************
-Descripcion: inicializa parámetros de la partida y asigna mazos según
+Descripcion: inicializa parametros de la partida y asigna mazos segun
 modalidad
 Parametros:
 ModoJuegoView modoJuegoView

@@ -10,10 +10,10 @@ class Globales {
     private static String modoJuego;
     protected enum Cards {
         // Crear cartas de Curso
-        MATE("Matemáticas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),
-        FIS("Física", "Ataca 450/Cura 150 puntos de prioridad.", 450, 150),
+        MATE("Matematicas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),
+        FIS("Fisica", "Ataca 450/Cura 150 puntos de prioridad.", 450, 150),
         LP("LP", "Ataca 510/Cura 180 puntos de prioridad.", 510, 180),
-        PROGRA("Programación", "Ataca 110/Cura 300 puntos de prioridad.", 110, 300),
+        PROGRA("Programacion", "Ataca 110/Cura 300 puntos de prioridad.", 110, 300),
         ED("ED", "Ataca 470/Cura 160 puntos de prioridad.", 470, 160),
         EDD("EDD", "Ataca 430/Cura 120 puntos de prioridad.", 430, 120),
 
@@ -25,7 +25,7 @@ class Globales {
 
         // Crear cartas de Carrete
         CERR("Cerrito", "Recupera 55 puntos de prioridad.", 55),
-        INTER("InterMechón", "Recupera 80 puntos de prioridad.", 80),
+        INTER("InterMechon", "Recupera 80 puntos de prioridad.", 80),
         FONDA("Sansafonda", "Recupera 100 puntos de prioridad.", 100),
         WEEK("SemanaSansana", "Recupera 150 puntos de prioridad.", 150),
         FREE("BloqueLibre", "Recupera 30 puntos de prioridad.", 30),
@@ -40,7 +40,7 @@ class Globales {
         // Constructor
 /******** Funcion: Cards ********************
 Descripcion: Constructor del enum Cards, establece los atributos
-básicos: nombre, descripcion, puntos (ataque), defensa
+basicos: nombre, descripcion, puntos (ataque), defensa
 Parametros:
 String cardName
 String cardDes

@@ -6,7 +6,7 @@ public class Profesor extends Carta {
 
 /******** Funcion: Profesor ********************
 Descripcion: Constroctor de la Carta tipo Profesor, estableciendo
-atributos: nombre, descripcion, daño y tipo
+atributos: nombre, descripcion, danio y tipo
 Parametros:
 String name
 String descript
@@ -43,8 +43,8 @@ Retorno: void
     }
 
 /******** Funcion: Recorregir ********************
-Descripcion: actualiza la prioridad del sansano restándole
-el daño correspondiente del Profesor
+Descripcion: actualiza la prioridad del sansano restandole
+el danioo correspondiente del Profesor
 Parametros:
 Sansano jugador
 Retorno: void

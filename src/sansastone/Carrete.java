@@ -21,7 +21,7 @@ int heal
 
 /******** Funcion: activar ********************
 Descripcion: Redefine el activar de Carta, esta vez actualizando
-prioridad según el tipo Carrete
+prioridad segun el tipo Carrete
 Parametros:
 Sansano jugador
 Retorno: void
@@ -32,7 +32,7 @@ Retorno: void
 
 /******** Funcion: activar ********************
 Descripcion: utiliza Carretear sobre jugador y ademas actualiza
-la ventana con la información pertinente
+la ventana con la informacion pertinente
 Parametros:
 Sansano jugador
 PlayView view
@@ -44,7 +44,7 @@ Retorno: void
     }
     
 /******** Funcion: Carretear ********************
-Descripcion: Actualiza la prioridad según la funcionalidad de las cartas
+Descripcion: Actualiza la prioridad segun la funcionalidad de las cartas
 tipo Carrete
 Parametros:
 Sansano jugador

@@ -8,7 +8,7 @@ public abstract class Carta {
     protected String tipo;
 
 /******** Funcion: activar ********************
-Descripcion: Activa la Carta según el tipo, 
+Descripcion: Activa la Carta segun el tipo, 
 debe ser redefinida
 Parametros:
 Sansano jugador
@@ -17,7 +17,7 @@ Retorno: void
     protected abstract void activar(Sansano jugador);
 
 /******** Funcion: activar ********************
-Descripcion: Activa la Carta según el tipo y además
+Descripcion: Activa la Carta segun el tipo y ademas
 hace los cambios sobre la ventana, debe ser redefinida
 Parametros:
 Sansano jugador

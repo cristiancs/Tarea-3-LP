@@ -47,10 +47,10 @@ Retorno: void
     public void setName(String nombre) { this.name = nombre; }
 
 /******** Funcion: setMazoSize ********************
-Descripcion: Obtiene el tamaño del mazo
+Descripcion: Obtiene el tamanio del mazo
 Parametros:
 None
-Retorno: int con el tamaño del mazo
+Retorno: int con el tamanio del mazo
 ************************************************/
     public int getMazoSize() {
         return this.mazo.size();

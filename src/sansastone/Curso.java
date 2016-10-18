@@ -57,7 +57,7 @@ Descripcion: Obtiene los puntosHabilidad de la Carta despendiendo del
 modo que se requiera
 Parametros:
 String modo
-Retorno: int del ataque o defensa según corresponda
+Retorno: int del ataque o defensa segin corresponda
 ************************************************/
     public int getPuntosHabilidad(String modo){
         if(modo.equals("ataque")){
@@ -111,7 +111,7 @@ Retorno: void
 
 /******** Funcion: activar ********************
 Descripcion: Activa la carta tipo Curso en cierta modalidad, actualizando
-también la ventana de juego
+tambien la ventana de juego
 Parametros:
 Sansano jugador
 PlayView view
