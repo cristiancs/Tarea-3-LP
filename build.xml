@@ -7,7 +7,6 @@
     <property name="main-class"  value="sansastone.Juego"/>
     <property name="ant.project.name"  value="Sansastone"/>
     <property name="lib.dir"     value="lib"/>
-    <property name="javac2.home" value="lib/"/>
 
     <path id="classpath">
         <fileset dir="${lib.dir}" includes="**/*.jar"/>
@@ -18,14 +17,14 @@
     </target>
 
     <target name="compile">
-        <unjar src="${javac2.home}/forms_rt.jar" dest="${classes.dir}">
+        <unjar src="${lib.dir}/forms_rt.jar" dest="${classes.dir}">
               <patternset>
                   <include name="**/*.class"/>
               </patternset>
         </unjar>
 
         <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+        <javac includeantruntime="false" srcdir="${src.dir}" destdir="${classes.dir}"/>
     </target>
 
     <target name="jar" depends="compile">
