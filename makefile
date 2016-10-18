@@ -1,7 +1,13 @@
-compilar:
-	ant run
-ejecutar:
+.DEFAULT_GOAL := jar
+
+classes: 
+	ant compile
+
+jar: 
+	ant jar
+
+run: 
 	java -jar build/jar/Sansastone.jar
-limpiar:
+
+clean: 
 	ant clean
-default: compilar
