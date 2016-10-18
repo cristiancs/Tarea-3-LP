@@ -10,10 +10,21 @@ public class GanadorView extends JFrame {
     private JLabel ganadorText;
     private JPanel panel;
 
+/******** Funcion: setGanadorText ********************
+Descripcion: establece el texto del ganador
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setGanadorText(String texto) {
         this.ganadorText.setText(texto);
     }
 
+/******** Funcion: activar ********************
+Descripcion: Constructor que establece la vista cuando haya ganador
+Parametros:
+None
+************************************************/
     public GanadorView() {
         setContentPane(panel);
         pack();

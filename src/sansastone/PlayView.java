@@ -9,12 +9,25 @@ import java.awt.event.ActionListener;
  * Created by Cristian Navarrete on 27-09-16.
  */
 public class PlayView extends JFrame {
+
     private JButton atacarButton;
 
+/******** Funcion: getAtacarButton ********************
+Descripcion: obtiene el boton para atacar
+Parametros:
+None
+Retorno: JButton
+************************************************/
     public JButton getAtacarButton() {
         return atacarButton;
     }
 
+/******** Funcion: getDefendermeButton ********************
+Descripcion: obtiene el boton para defenderse
+Parametros:
+None
+Retorno: JButton
+************************************************/
     public JButton getDefendermeButton() {
         return defendermeButton;
     }
@@ -32,48 +45,113 @@ public class PlayView extends JFrame {
     private JLabel turnoJugadorLabel;
     private JLabel prioridadEnemigoLabel;
 
-
+/******** Funcion: setCartaActual ********************
+Descripcion: establece el texto de la carta actual
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setCartaActual(String texto) {
         this.CartaActual.setText(texto);
     }
 
+/******** Funcion: setprioridadUsuario ********************
+Descripcion: establece el texto de la prioridad del usuario
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setprioridadUsuario(String texto) {
         this.prioridadUsuario.setText(texto);
     }
 
+/******** Funcion: setprioridadUsuario ********************
+Descripcion: establece el texto de la prioridad del contrincante
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setprioridadEnemigo(String texto) {
         this.prioridadEnemigo.setText(texto);
     }
 
+/******** Funcion: setprioridadUsuario ********************
+Descripcion: establece el texto con la ultima jugada realizada
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setUltimaAccion(String texto) {
         this.ultima_accion.setText(texto);
     }
 
+/******** Funcion: setValorAtaque ********************
+Descripcion: establece el texto del ataque de la carta actual
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setValorAtaque(String texto) {
         this.valorataque.setText(texto);
     }
 
+/******** Funcion: setValorAtaque ********************
+Descripcion: establece el texto de la defensa de la carta actual
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setValorDefensa(String texto) {
         this.valordefensa.setText(texto);
     }
 
+/******** Funcion: setNombreJugador ********************
+Descripcion: establece el texto con el nombre del jugador
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setNombreJugador(String texto) {
         this.NombreJugador.setText(texto);
     }
 
+/******** Funcion: setNumeroTurno ********************
+Descripcion: establece el texto con el turno
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setNumeroTurno(String texto) {
         this.NumeroTurno.setText(texto);
     }
 
+/******** Funcion: setTurnoJugadorLabel ********************
+Descripcion: establece el texto del turno sobre la etiqueta
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setTurnoJugadorLabel(String texto) {
         this.turnoJugadorLabel.setText(texto);
     }
 
+/******** Funcion: setPrioridadEnemigoLabel ********************
+Descripcion: establece el texto de la prioridad del enemigo
+sobre la etiqueta
+Parametros:
+String texto
+Retorno: void
+************************************************/
     public void setPrioridadEnemigoLabel(String texto) {
         this.prioridadEnemigoLabel.setText(texto);
     }
 
-
+/******** Funcion: PlayView ********************
+Descripcion: Constructor que establece la vista durante el
+desarrollo del juego
+Parametros:
+None
+************************************************/
     public PlayView() {
         setContentPane(panel);
         pack();
@@ -96,6 +174,13 @@ public class PlayView extends JFrame {
      *
      * @noinspection ALL
      */
+
+/******** Funcion: $$$setupUI$$$ ********************
+Descripcion: metodo para el funcionamiento fuera de intellij ide
+Parametros:
+None
+Retorno: void
+************************************************/
     private void $$$setupUI$$$() {
         panel = new JPanel();
         panel.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 5, new Insets(20, 20, 20, 20), -1, -1));
@@ -164,6 +249,13 @@ public class PlayView extends JFrame {
     /**
      * @noinspection ALL
      */
+
+/******** Funcion: $$$getRootComponent$$$ ********************
+Descripcion: metodo para el funcionamiento fuera de intellij ide
+Parametros:
+None
+Retorno: JComponent
+************************************************/
     public JComponent $$$getRootComponent$$$() {
         return panel;
     }

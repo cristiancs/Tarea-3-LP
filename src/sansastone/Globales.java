@@ -8,6 +8,7 @@ class Globales {
 
     private static String modoUso;
     private static String modoJuego;
+    // Implementado enum sobre static final
     protected enum Cards {
         // Crear cartas de Curso
         MATE("Matematicas", "Ataca 550/Cura 200 puntos de prioridad.", 550, 200),

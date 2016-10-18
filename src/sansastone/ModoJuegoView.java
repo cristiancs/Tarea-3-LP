@@ -11,6 +11,13 @@ public class ModoJuegoView extends JFrame {
     private JButton a2JugadoresButton;
     private JPanel Portada;
 
+/******** Funcion: ModoJuegoView ********************
+Descripcion: Constructor que establece la ventana de
+seleccion de modo
+Parametros:
+Sansano s1
+Sansano s2
+************************************************/
     public ModoJuegoView(Sansano s1, Sansano s2) {
         setContentPane(Portada);
         pack();
@@ -43,6 +50,13 @@ public class ModoJuegoView extends JFrame {
      *
      * @noinspection ALL
      */
+
+    /******** Funcion: activar ********************
+Descripcion: metodo para el funcionamiento fuera de intellij ide
+Parametros:
+None
+Retorno: void
+************************************************/
     private void $$$setupUI$$$() {
         Portada = new JPanel();
         Portada.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(4, 2, new Insets(20, 20, 20, 20), -1, -1));
