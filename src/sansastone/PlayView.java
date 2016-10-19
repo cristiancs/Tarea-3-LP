@@ -35,6 +35,7 @@ Retorno: JButton
     private JButton defendermeButton;
     private JLabel prioridadUsuario;
     private JLabel CartaActual;
+    private JLabel CardDescription;
     private JLabel prioridadEnemigo;
     private JLabel ultima_accion;
     private JLabel valorataque;
@@ -55,7 +56,17 @@ Retorno: void
         this.CartaActual.setText(texto);
     }
 
-/******** Funcion: setprioridadUsuario ********************
+/******** Funcion: setCardDescription ********************
+Descripcion: establece el texto que describe la carta
+Parametros:
+String texto
+Retorno: void
+************************************************/
+    public void setCardDescription(String texto) {
+        this.CardDescription.setText(texto);
+    }
+
+    /******** Funcion: setprioridadUsuario ********************
 Descripcion: establece el texto de la prioridad del usuario
 Parametros:
 String texto
@@ -196,6 +207,9 @@ Retorno: void
         CartaActual = new JLabel();
         CartaActual.setText("CARTANAME");
         panel.add(CartaActual, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        CardDescription = new JLabel();
+        CardDescription.setText("Ataca 000/Cura 000 puntos de prioridad");
+        panel.add(CardDescription, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setText("ATAQUE:");
         panel.add(label3, new com.intellij.uiDesigner.core.GridConstraints(5, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
